@@ -1,0 +1,10 @@
+<!doctype html><html><body style="margin:0;background:#000">
+<canvas id="out"></canvas>
+<script type="module">
+const fonts=[['Archivo Black','fonts/archivo-black-latin-400-normal.woff2',{}],['Instrument Serif','fonts/instrument-serif-latin-400-normal.woff2',{}],['Instrument Serif','fonts/instrument-serif-latin-400-italic.woff2',{style:'italic'}],['Inter','fonts/inter-latin-600-normal.woff2',{weight:'600'}],['Inter','fonts/inter-latin-800-normal.woff2',{weight:'800'}]];
+for(const [n,u,d] of fonts){const f=new FontFace(n,`url(${u})`,d); await f.load(); document.fonts.add(f);}
+const v=new URLSearchParams(location.search).get('v');
+const tl=await (await fetch(`/videos/${v}/timeline.json`)).json(); window.TL=tl;
+await import(`/videos/${v}/video.js`);
+window.allReady=true;
+</script></body></html>
