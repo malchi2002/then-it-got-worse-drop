@@ -1,39 +1,249 @@
 {
- "id":"17-burp",
- "events":[
-  ["N","What if every burp was three times more powerful than the last?",{"title":1}],
-  ["N","Family dinner. Dale just had three sodas."],
-  ["X","Excuse yourself, Dale."],
-  ["A",1,{"dur":0.6,"off":0.3}],
-  ["N","Eighty decibels. A normal burp.",{"rung":0}],
-  ["A",3,{"dur":0.6,"off":0.3}],
-  ["N","Ninety nine. A motorcycle. The gravy ripples.",{"rung":1}],
-  ["A",5,{"dur":0.6,"off":0.3}],
-  ["N","One eighteen. A rock concert. Grandma's wig is gone.",{"rung":2}],
-  ["A",7,{"dur":0.6,"off":0.3}],
-  ["N","One thirty seven. A jet engine. The turkey leaves the table.",{"rung":3}],
-  ["A",9,{"dur":0.6,"off":0.3}],
-  ["N","One fifty six. Every window on the street shatters.",{"rung":4}],
-  ["A",11,{"dur":0.6,"off":0.3}],
-  ["N","One seventy five. Louder than a volcano.",{"rung":5}],
-  ["N","Then it got worse.",{"worse":1}],
-  ["A",13,{"dur":0.7,"off":0.35}],
-  ["N","One ninety four. The loudest sound air can carry. Anything more is a shock wave.",{"rung":6}],
-  ["N","Grandma is still sitting there."],
-  ["I","Excuse me."],
-  ["N","The real part: in eighteen eighty three, the Krakatoa volcano erupted so loudly it was heard almost five thousand kilometers away.",{"fact":1}]
+ "id": "17-burp",
+ "events": [
+  [
+   "N",
+   "What if every burp was three times more powerful than the last?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Family dinner. Dale just had three sodas."
+  ],
+  [
+   "X",
+   "Excuse yourself, Dale."
+  ],
+  [
+   "A",
+   1,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Eighty decibels. A normal burp.",
+   {
+    "rung": 0
+   }
+  ],
+  [
+   "A",
+   3,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   5,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   7,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   9,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "One fifty six. Every window on the street shatters.",
+   {
+    "rung": 4
+   }
+  ],
+  [
+   "A",
+   11,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "One seventy five. Louder than a volcano.",
+   {
+    "rung": 5
+   }
+  ],
+  [
+   "N",
+   "Then it got worse.",
+   {
+    "worse": 1
+   }
+  ],
+  [
+   "A",
+   13,
+   {
+    "dur": 0.7,
+    "off": 0.35
+   }
+  ],
+  [
+   "N",
+   "One ninety four. The loudest sound air can carry. Anything more is a shock wave.",
+   {
+    "rung": 6
+   }
+  ],
+  [
+   "N",
+   "Grandma is still sitting there."
+  ],
+  [
+   "I",
+   "Excuse me."
+  ],
+  [
+   "N",
+   "The real part: in eighteen eighty three, the Krakatoa volcano erupted so loudly it was heard almost five thousand kilometers away.",
+   {
+    "fact": 1
+   }
+  ],
+  [
+   "N",
+   "So never ask:",
+   {
+    "loop": 1,
+    "gap": 0.25
+   }
+  ]
  ],
- "voices":{"X":["af_sky",0.95,"en-us"]},
- "music":{"style":"sneaky","transpose":-3},
- "sfx":[
-  {"type":"hum","at":"A1","dur":0.5,"f":90,"gain":0.5},
-  {"type":"hum","at":"A3","dur":0.7,"f":70,"gain":0.7},
-  {"type":"hum","at":"A5","dur":0.9,"f":60,"gain":0.8},{"type":"whoosh","at":"A5","off":0.1,"dur":0.6,"gain":0.5},
-  {"type":"roar","at":"A7","dur":1.4,"gain":0.8},{"type":"whoosh","at":"A7","off":0.2,"dur":0.8,"gain":0.6},
-  {"type":"roar","at":"A9","dur":1.6,"gain":0.9},{"type":"glass","at":"A9","off":0.2,"dur":1.6,"gain":0.9},
-  {"type":"boom","at":"A11","dur":2.6,"gain":1.0},{"type":"roar","at":"A11","dur":2,"gain":0.7},
-  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
-  {"type":"boom","at":"A13","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.0},{"type":"whoosh","at":"A13","off":0.2,"dur":1.8,"gain":0.7},
-  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
- ]
+ "voices": {
+  "X": [
+   "af_sky",
+   0.95,
+   "en-us"
+  ],
+  "N": [
+   "am_michael",
+   1.2,
+   "en-us"
+  ]
+ },
+ "music": {
+  "style": "sneaky",
+  "transpose": -3
+ },
+ "sfx": [
+  {
+   "type": "hum",
+   "at": "A1",
+   "dur": 0.5,
+   "f": 90,
+   "gain": 0.5
+  },
+  {
+   "type": "hum",
+   "at": "A3",
+   "dur": 0.7,
+   "f": 70,
+   "gain": 0.7
+  },
+  {
+   "type": "hum",
+   "at": "A5",
+   "dur": 0.9,
+   "f": 60,
+   "gain": 0.8
+  },
+  {
+   "type": "whoosh",
+   "at": "A5",
+   "off": 0.1,
+   "dur": 0.6,
+   "gain": 0.5
+  },
+  {
+   "type": "roar",
+   "at": "A7",
+   "dur": 1.4,
+   "gain": 0.8
+  },
+  {
+   "type": "whoosh",
+   "at": "A7",
+   "off": 0.2,
+   "dur": 0.8,
+   "gain": 0.6
+  },
+  {
+   "type": "roar",
+   "at": "A9",
+   "dur": 1.6,
+   "gain": 0.9
+  },
+  {
+   "type": "glass",
+   "at": "A9",
+   "off": 0.2,
+   "dur": 1.6,
+   "gain": 0.9
+  },
+  {
+   "type": "boom",
+   "at": "A11",
+   "dur": 2.6,
+   "gain": 1.0
+  },
+  {
+   "type": "roar",
+   "at": "A11",
+   "dur": 2,
+   "gain": 0.7
+  },
+  {
+   "type": "riser",
+   "at": "worse",
+   "off": -0.1,
+   "dur": 1.7,
+   "gain": 0.7
+  },
+  {
+   "type": "boom",
+   "at": "A13",
+   "dur": 4,
+   "f0": 60,
+   "f1": 20,
+   "dec": 1.2,
+   "gain": 1.0
+  },
+  {
+   "type": "whoosh",
+   "at": "A13",
+   "off": 0.2,
+   "dur": 1.8,
+   "gain": 0.7
+  },
+  {
+   "type": "ding",
+   "at": "fact",
+   "off": -0.2,
+   "gain": 0.3
+  }
+ ],
+ "cold": 0.9,
+ "tail": 0.12
 }
