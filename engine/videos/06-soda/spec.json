@@ -1,0 +1,36 @@
+{
+ "id":"06-soda",
+ "events":[
+  ["N","What if every time you shook a soda, the pressure got three times higher?",{"title":1}],
+  ["N","Saturday. Dale has one soda and zero patience."],
+  ["A",1,{"dur":0.6,"off":0.2}],
+  ["N","Two and a half bar. A normal soda.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.2}],
+  ["N","Twenty two bar. Ten car tires in one can.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.2}],
+  ["N","Two hundred bar. A scuba tank. In his hand.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.2}],
+  ["N","Eighteen hundred bar. More than the bottom of the deepest ocean.",{"rung":3}],
+  ["A",10,{"dur":0.6,"off":0.2}],
+  ["N","Forty nine thousand bar. Enough to squeeze carbon into diamonds.",{"rung":4}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["N","He opened it."],
+  ["A",11,{"dur":0.6,"off":0.15}],
+  ["N","The roof is gone. The soda reached orbit.",{"rung":5}],
+  ["N","Dale finally takes a sip."],
+  ["X","It's flat."],
+  ["N","The real part: a sealed soda holds about two to four times normal air pressure. That's why it hisses when you open it.",{"fact":1}]
+ ],
+ "voices":{"X":["am_michael",0.95,"en-us"]},
+ "music":{"style":"sneaky","transpose":3},
+ "sfx":[
+  {"type":"pop","at":"A1","gain":0.4},
+  {"type":"hum","at":"A3","dur":2,"f":180,"gain":0.15},
+  {"type":"hum","at":"A5","dur":2.5,"f":140,"gain":0.25},{"type":"crack","at":"A5","off":0.8,"gain":0.4},
+  {"type":"hum","at":"A7","dur":3,"f":100,"gain":0.35},{"type":"crack","at":"A7","off":0.6,"gain":0.7},{"type":"crack","at":"A7","off":1.0,"gain":0.6},{"type":"glass","at":"A7","off":0.7,"dur":1.5,"gain":0.35},
+  {"type":"hum","at":"A10","dur":3,"f":70,"gain":0.45},{"type":"ding","at":"A10","off":1.2,"gain":0.5},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"whoosh","at":"A11","off":-0.1,"dur":0.4,"gain":0.6},{"type":"boom","at":"A11","dur":4,"f0":70,"f1":22,"dec":1.2,"gain":1.1},{"type":"roar","at":"A11","dur":5,"gain":0.9},{"type":"splash","at":"A11","dur":2.5,"gain":0.7},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
