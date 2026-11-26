@@ -1,0 +1,39 @@
+{
+ "id":"27-plane",
+ "events":[
+  ["N","What if every paper airplane you threw flew three times farther than the last?",{"title":1}],
+  ["N","Math class. Dale is supposed to be doing his homework."],
+  ["X","Dale. Eyes on the board."],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","Five meters. Across the classroom.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Forty five. Down the whole hallway.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Four hundred. Out of the school.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Thirty six hundred. Over the whole town.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Thirty three kilometers. Real planes are moving out of the way.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Three hundred kilometers. It's in another state.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",15,{"dur":0.7,"off":0.35}],
+  ["N","Twenty four thousand kilometers. It lands in a classroom on the other side of the world.",{"rung":6}],
+  ["N","A kid unfolds it. It's Dale's homework."],
+  ["F","He got a C minus."],
+  ["N","The real part: the farthest a paper airplane has ever flown is about ninety eight meters, set in Shanghai in twenty twenty five.",{"fact":1}]
+ ],
+ "voices":{"X":["af_bella",1.0,"en-us"],"F":["af_sky",1.1,"en-us"]},
+ "music":{"style":"sneaky","transpose":4},
+ "sfx":[
+  {"type":"whoosh","at":"A1","dur":0.8,"gain":0.4},
+  {"type":"whoosh","at":"A3","dur":1.2,"gain":0.5},
+  {"type":"glass","at":"A5","off":0.5,"dur":1.0,"gain":0.6},{"type":"whoosh","at":"A5","dur":1.2,"gain":0.5},
+  {"type":"wind","at":"A7","dur":2.4,"gain":0.5},
+  {"type":"roar","at":"A9","dur":2,"gain":0.5},{"type":"whoosh","at":"A9","off":0.6,"dur":1,"gain":0.6},
+  {"type":"whoosh","at":"A11","dur":2,"gain":0.6},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"boom","at":"A15","dur":3,"f0":60,"f1":20,"dec":1.2,"gain":0.8},{"type":"whoosh","at":"A15","off":0.2,"dur":3,"gain":0.7},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
