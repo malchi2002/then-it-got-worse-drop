@@ -1,0 +1,39 @@
+{
+ "id":"21-homerun",
+ "events":[
+  ["N","What if every home run went three times farther than the last?",{"title":1}],
+  ["N","Bottom of the ninth. Dale has never hit the ball."],
+  ["X","Easy out."],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","One hundred twenty meters. A normal home run.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","One kilometer. Out of the stadium.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Ten kilometers. Through a window in the next town.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Eighty seven kilometers. It's over the ocean.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Eight hundred kilometers. Air traffic control is calling.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Seven thousand kilometers. Across the entire ocean.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",15,{"dur":0.7,"off":0.35}],
+  ["N","Five hundred seventy thousand kilometers. That ball is not coming back.",{"rung":6}],
+  ["N","Dale is still running the bases."],
+  ["I","Is that a double?"],
+  ["N","The real part: a hundred mile per hour fastball reaches home plate in about four tenths of a second.",{"fact":1}]
+ ],
+ "voices":{"X":["am_puck",1.0,"en-us"]},
+ "music":{"style":"march","transpose":0},
+ "sfx":[
+  {"type":"crack","at":"A1","gain":0.7},{"type":"roar","at":"A1","off":0.4,"dur":1.4,"gain":0.3},
+  {"type":"crack","at":"A3","gain":0.8},{"type":"whoosh","at":"A3","off":0.1,"dur":0.8,"gain":0.5},
+  {"type":"crack","at":"A5","gain":0.9},{"type":"glass","at":"A5","off":0.9,"dur":1.0,"gain":0.6},
+  {"type":"crack","at":"A7","gain":1.0},{"type":"whoosh","at":"A7","off":0.1,"dur":1.2,"gain":0.6},
+  {"type":"crack","at":"A9","gain":1.0},{"type":"boom","at":"A9","off":0.05,"dur":1.4,"gain":0.6},
+  {"type":"crack","at":"A11","gain":1.0},{"type":"boom","at":"A11","off":0.05,"dur":2,"gain":0.8},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"boom","at":"A15","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.0},{"type":"whoosh","at":"A15","off":0.2,"dur":2,"gain":0.7},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
