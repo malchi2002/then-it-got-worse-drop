@@ -1,0 +1,70 @@
+import * as L from '/lib.js';
+const { THREE, V, mat, mesh, box, clamp, ease, easeOut, lerp, setCam, rng, makeGuy, setFace, resetPose, blinkAt } = L;
+const TL = window.TL; const H = L.tlHelpers(TL); const A = {}; TL.tl.filter(x => x.type === 'act').forEach(x => A[x.n] = x.blast);
+const line = H.line;
+const talk = (p, t) => { const l = line(p); return t > l.t && t < l.end ? Math.abs(Math.sin(t * 14)) * 0.5 : 0; };
+const NS = [1, 3, 5, 7, 9, 11, 13];
+const lvl = t => NS.filter(n => t > A[n]).length;
+// ---------- rink ----------
+const rk = new THREE.Scene(); rk.background = new THREE.Color(0x101828); rk.fog = new THREE.Fog(0x101828, 40, 120);
+rk.add(new THREE.HemisphereLight(0xdfe8ff, 0x8aa0c0, 1.2)); for (const x of [-10, 0, 10]) { const l = new THREE.PointLight(0xf0f4ff, 30, 30, 1.4); l.position.set(x, 10, -4); rk.add(l); } { const s = new THREE.DirectionalLight(0xffffff, 1.2); s.position.set(4, 14, 6); s.castShadow = true; Object.assign(s.shadow.camera, { left: -10, right: 10, top: 10, bottom: -10 }); rk.add(s); }
+const iceT = L.canvasTex(512, 512, (g, w, h) => { g.fillStyle = '#e8f4fb'; g.fillRect(0, 0, w, h); g.strokeStyle = 'rgba(170,200,230,0.5)'; g.lineWidth = 2; const r = rng(4); for (let i = 0; i < 60; i++) { g.beginPath(); g.arc(r() * w, r() * h, 20 + r() * 120, r() * 6, r() * 6 + 1.5); g.stroke(); } g.fillStyle = '#d9301f'; g.fillRect(w / 2 - 3, 0, 6, h); g.strokeStyle = '#2a5ab0'; g.lineWidth = 6; g.beginPath(); g.arc(w / 2, h / 2, 60, 0, 7); g.stroke(); });
+const iceM = new THREE.MeshStandardMaterial({ map: iceT, roughness: 0.15, metalness: 0.1 }); const ice = mesh(new THREE.PlaneGeometry(60, 30), iceM, false, true); ice.rotation.x = -Math.PI / 2; ice.rotation.z = Math.PI / 2; rk.add(ice);
+{ const cols = [0xd9301f, 0x2a5ab0, 0xffd23f, 0x3ad06a, 0xffffff]; for (let i = 0; i < 24; i++) { const b = box(2.5, 1.1, 0.2, mat(i % 2 ? 0xffffff : cols[i % 5])); const a = i / 24 * Math.PI * 2; b.position.set(Math.cos(a) * 15, 0.55, Math.sin(a) * 8); b.lookAt(0, 0.55, 0); rk.add(b); } const stands = mesh(new THREE.CylinderGeometry(26, 20, 10, 32, 1, true), new THREE.MeshStandardMaterial({ color: 0x2a3050, side: THREE.BackSide })); stands.scale.z = 0.6; stands.position.y = 4; rk.add(stands); }
+const fans = L.makeInstanced(new THREE.BoxGeometry(0.5, 0.8, 0.4), mat(0xffffff), 600); fans.castShadow = false; rk.add(fans); { const r = rng(9); const c = new THREE.Color(); for (let i = 0; i < 600; i++) { const a = r() * Math.PI * 2; const rr = 20 + r() * 5; L._m.compose(V(Math.cos(a) * rr, 1.5 + (rr - 20) * 1.4, Math.sin(a) * rr * 0.6), L._q.identity(), L._s.setScalar(1)); fans.setMatrixAt(i, L._m); fans.setColorAt(i, c.setHSL(r(), 0.6, 0.55)); } fans.instanceMatrix.needsUpdate = true; }
+const dale = makeGuy({ ...L.DALE }); rk.add(dale.root); { for (const lg of [dale.lL, dale.lR]) { const blade = box(0.04, 0.06, 0.32, mat(0xd0d4da, { m: 0.9 })); blade.position.set(0, -0.48, 0.04); lg.kn.add(blade); } }
+const coach = makeGuy({ wood: 0xd9b08a, hair: 0xd8b040, shirt: 0x2ab0e8 }); coach.root.position.set(-2.4, 0, 1.6); coach.root.rotation.y = 2.0; rk.add(coach.root);
+const blurT = L.canvasTex(256, 256, (g, w, h) => { const gr = g.createRadialGradient(128, 128, 30, 128, 128, 128); gr.addColorStop(0, 'rgba(255,255,255,0)'); gr.addColorStop(0.5, 'rgba(220,235,255,0.5)'); gr.addColorStop(1, 'rgba(220,235,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, w, h); g.strokeStyle = 'rgba(255,255,255,0.6)'; g.lineWidth = 3; for (let i = 0; i < 12; i++) { g.beginPath(); g.arc(128, 128, 50 + i * 6, i, i + 2); g.stroke(); } });
+const blur = new THREE.Group(); for (let i = 0; i < 4; i++) { const d = mesh(new THREE.CircleGeometry(0.7, 32), new THREE.MeshBasicMaterial({ map: blurT, transparent: true, depthWrite: false, side: THREE.DoubleSide })); d.rotation.x = -Math.PI / 2; d.position.y = 0.3 + i * 0.45; blur.add(d); } rk.add(blur);
+const spray = L.makePuff(rk, 60, 0xffffff, 0.8, 3); const steam = L.makePuff(rk, 40, 0xe0e8f0, 0.5, 5);
+const puddle = mesh(new THREE.CircleGeometry(1, 32), new THREE.MeshStandardMaterial({ color: 0x5a8ac0, roughness: 0.05, metalness: 0.4 })); puddle.rotation.x = -Math.PI / 2; puddle.position.y = 0.01; rk.add(puddle);
+const hole = mesh(new THREE.CircleGeometry(0.55, 32), new THREE.MeshBasicMaterial({ color: 0x050505 })); hole.rotation.x = -Math.PI / 2; hole.position.y = 0.02; rk.add(hole);
+const shards = L.makeInstanced(new THREE.BoxGeometry(0.15, 0.05, 0.12), new THREE.MeshStandardMaterial({ color: 0xdff2ff, transparent: true, opacity: 0.85 }), 60); rk.add(shards); const shardD = L.debrisData(3, 60, r => ({ p0: V((r() - 0.5) * 0.8, 0.05, (r() - 0.5) * 0.8), v: V((r() - 0.5) * 8, 3 + r() * 5, (r() - 0.5) * 8) }));
+// ---------- underground cutaway ----------
+const ug = new THREE.Scene(); ug.background = new THREE.Color(0x1a0e08);
+ug.add(new THREE.HemisphereLight(0xffe0c0, 0x402010, 1.0)); { const s = new THREE.DirectionalLight(0xffffff, 1.4); s.position.set(5, 5, 10); ug.add(s); }
+const layers = [[0x6a4a2a, 0, -8], [0x8a6a4a, -8, -30], [0x5a5a5a, -30, -70], [0x7a3a2a, -70, -200], [0x3a2a2a, -200, -600]]; layers.forEach(([c, y0, y1]) => { const b = box(200, y0 - y1, 6, mat(c, { r: 1 })); b.position.set(0, (y0 + y1) / 2, -3); ug.add(b); });
+{ const r = rng(5); for (let i = 0; i < 70; i++) { const rkk = mesh(new THREE.DodecahedronGeometry(0.4 + r() * 1.8, 0), mat(0x4a4a4a)); rkk.position.set((r() - 0.5) * 60, -5 - r() * 300, 0.5); ug.add(rkk); } }
+const iceTop = box(200, 1, 6, mat(0xe8f4fb)); iceTop.position.set(0, 0.5, -3); ug.add(iceTop);
+const shaftU = box(1.2, 1, 0.1, new THREE.MeshBasicMaterial({ color: 0x050505 })); ug.add(shaftU);
+const daleU = makeGuy({ ...L.DALE }); ug.add(daleU.root); const blurU = blur.clone(); daleU.root.add(blurU); blurU.position.y = -0.0;
+const sparks = L.makePuff(ug, 50, 0xffb040, 0.9, 8);
+// ---------- space ----------
+const S = L.buildSpace(); const cut = mesh(new THREE.CylinderGeometry(0.35, 0.35, 40.4, 10), new THREE.MeshBasicMaterial({ color: 0xff8a2a })); S.scene.add(cut); const daleS = makeGuy({ ...L.DALE }); S.scene.add(daleS.root);
+const AXD = V(-0.55, 0.55, 0.62).normalize(); cut.quaternion.setFromUnitVectors(V(0, 1, 0), AXD);
+// ---------- worse / lab ----------
+const wsc = new THREE.Scene(); wsc.background = new THREE.Color(0x14060a); const wl = new THREE.PointLight(0xff3020, 30, 12, 2); wl.position.set(0.8, 2.0, 2.0); wsc.add(wl); wsc.add(new THREE.AmbientLight(0x200810, 1)); const daleW = makeGuy({ ...L.DALE }); wsc.add(daleW.root);
+const lab = L.buildLab({ bg: 0xe8f2f8, floor: 0xd8e2e8 }); const daleL = makeGuy({ ...L.DALE }); daleL.root.position.set(-0.6, 0, 0); lab.scene.add(daleL.root); { const top = new THREE.Group(); const c = mesh(new THREE.ConeGeometry(0.25, 0.4, 20), mat(0xd9301f)); c.rotation.x = Math.PI; c.position.y = 0.2; top.add(c); const s = mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.2, 8), mat(0x222222)); s.position.y = 0.5; top.add(s); top.position.set(0.6, 0.8, -0.1); lab.scene.add(top); lab.userData = { top }; const st = box(0.5, 0.8, 0.5, mat(0xd8d8d8)); st.position.set(0.6, 0.4, -0.1); lab.scene.add(st); }
+
+function spinPose(g) { g.aL.sh.rotation.set(-0.3, 0, -0.6); g.aR.sh.rotation.set(-0.3, 0, 0.6); g.aL.el.rotation.x = -1.6; g.aR.el.rotation.x = -1.6; g.lR.hip.rotation.x = -0.6; g.lR.kn.rotation.x = 1.0; }
+const RPS = [0, 1, 9, 30, 60, 90, 120, 160];
+function rinkState(t) { resetPose(dale); blinkAt(dale, t); const l = lvl(t); const sp = RPS[l]; dale.root.position.set(0, 0, 0); dale.root.rotation.set(0, t * sp * (l >= 3 ? 1 : Math.PI * 2 / 6.28), 0); if (l >= 1) spinPose(dale); blur.visible = l >= 2; blur.rotation.y = t * 20; blur.children.forEach(d => d.scale.setScalar(l >= 2 ? 1 + l * 0.05 : 1)); dale.root.visible = l < 2 || true;
+  resetPose(coach); coach.root.position.set(-2.4, 0, 1.6); coach.root.rotation.y = 2.0; blinkAt(coach, t + 1); puddle.visible = l >= 3; puddle.scale.setScalar(l >= 3 ? lerp(0.5, 2.5, clamp((t - A[5]) / 2)) : 1); hole.visible = l >= 5; L.hideAll(spray); L.hideAll(steam); L.hideAll(shards); return l; }
+function shots() {
+  const L2 = H.LINES[1].t, back = line('Back at').t;
+  return [['establish', 0, L2], ['setup', L2, A[1] - 0.6], ['s1', A[1] - 0.6, A[3] - 0.5], ['s3', A[3] - 0.5, A[5] - 0.5], ['s5', A[5] - 0.5, A[7] - 0.5], ['s7', A[7] - 0.5, A[9] - 0.5], ['s9', A[9] - 0.5, A[11] - 0.5], ['s11', A[11] - 0.5, H.worse.t], ['worse', H.worse.t, A[13] - 0.4], ['earth', A[13] - 0.4, back], ['end', back, H.fact.t], ['fact', H.fact.t, TL.dur + 1]];
+}
+function renderShot(name, lt, dur, t) {
+  L.cam.far = 6000;
+  switch (name) {
+    case 'establish': { rinkState(t); setFace(dale, { lid: 0.3, brow: 0.6, browTilt: 0.2 }); dale.root.rotation.y = 0.3; const k = ease(lt / dur); setCam(V(lerp(9, 7, k), lerp(5, 3.8, k), lerp(12, 9, k)), V(0, 1, 0), 48); return rk; }
+    case 'setup': { rinkState(t); dale.root.rotation.y = -0.6; setFace(dale, { lid: 0.3, brow: 0.6, browTilt: 0.2 }); setFace(coach, { lid: 0.45, brow: 0.5, mouth: talk('Arms in', t) }); coach.aR.sh.rotation.set(-1.3, 0, -0.4); const ai = line('Arms in'); if (t > ai.t - 0.2) setCam(V(0.3, 1.85, 1.0), V(-2.4, 1.5, 1.6), 40); else setCam(V(2.4, 1.8, 5.2), V(0, 1.1, 0), 44); return rk; }
+    case 's1': case 's3': case 's5': case 's7': { const n = +name.slice(1); const l = rinkState(t); const dt = t - A[n]; setFace(dale, n === 1 ? { lid: 0.3, brow: 0.5, mouth: 0.2 } : { lid: 0, brow: 1, mouth: 0.5 }); setFace(coach, n >= 3 ? { lid: 0, brow: 1, mouth: 0.5 } : { lid: 0.45, brow: 0.3 });
+      L.puffAt(spray, V(0, 0.05, 0), V(0, 0.4, 0), (t % 1.2), 0.6 + n * 0.15, 1.2); if (n >= 5) L.puffAt(steam, V(0, 0.1, 0), V(0, 1, 0), (t % 2), 1.5, 2);
+      if (n === 7) { coach.root.position.set(-2.4 + Math.min(1.5, Math.max(0, dt) * 0.8), 0, 1.6 - Math.min(1, Math.max(0, dt) * 0.5)); coach.root.rotation.z = dt > 0 ? -0.25 : 0; }
+      if (n === 1) setCam(V(2.0, 1.8, 4.8), V(0, 1.1, 0), 46); else if (n === 3) setCam(V(-2.4, 1.7, 4.2), V(0, 1.0, 0), 48, 0.006, t); else if (n === 5) setCam(V(2.2, 2.2, 3.0), V(0, 0.6, 0), 50, 0.01, t); else setCam(V(4, 2.6, 6), V(-0.6, 1.0, 0.6), 50, 0.03, t); return rk; }
+    case 's9': { const l = rinkState(t); const dt = t - A[9]; setFace(dale, { lid: 0, brow: 1, mouth: 0.6 }); setFace(coach, { lid: 0, brow: 1, mouth: 0.6 }); dale.root.position.y = dt > 0 ? -easeOut(clamp(dt / 1.4)) * 2.2 : 0; L.debrisAt(shards, shardD, dt, 9.8, 0.05); blur.position.y = dale.root.position.y; setCam(V(1.4, 2.2, 2.4), V(0, 0.2, 0), 54, dt > 0 && dt < 0.6 ? 0.03 : 0, t); return rk; }
+    case 's11': { const dt = t - A[11]; resetPose(daleU); spinPose(daleU); setFace(daleU, { lid: 0, brow: 1, mouth: 0.6 }); const y = -6 - easeOut(clamp((t - (A[11] - 0.5)) / 3)) * 160; daleU.root.position.set(0, y, 0); daleU.root.rotation.set(0, t * 160, 0); shaftU.scale.set(1, -y + 1, 1); shaftU.position.set(0, y / 2 + 0.5, 0.1); L.puffAt(sparks, V(0, y, 0.5), V(0, 1, 0), (t % 0.8), 2.5, 0.8);
+      setCam(V(0, y + 1.5, 9), V(0, y + 0.8, 0), 50, 0.04, t); return ug; }
+    case 'worse': { resetPose(daleW); spinPose(daleW); daleW.root.rotation.set(0, 0.3, 0); setFace(daleW, { lid: 0.1, brow: 1, mouth: 0.4 }); setCam(V(0.25, 1.65, lerp(1.8, 1.45, lt / dur)), V(0, 1.55, 0), 36, 0.006, t); return wsc; }
+    case 'earth': { const dt = t - A[13]; S.earth.rotation.y = 0; S.moon.position.set(140, 20, -160); const q = clamp(dt / 1.6); cut.visible = dt > 0; cut.scale.set(1, Math.max(0.01, q), 1); cut.position.copy(AXD.clone().multiplyScalar(20.2 - 20.2 * q)); const out = dt > 1.6; daleS.root.visible = out; resetPose(daleS); spinPose(daleS); daleS.root.scale.setScalar(2.4); daleS.root.position.copy(AXD.clone().multiplyScalar(-(20 + clamp((dt - 1.6) / 1.2) * 8))); daleS.root.quaternion.setFromUnitVectors(V(0, 1, 0), AXD.clone().negate()); daleS.root.rotateY(t * 40); setFace(daleS, { lid: 0.6, brow: -0.2, mouth: 0.3 });
+      S.earth.material.transparent = true; S.earth.material.opacity = 0.55; if (lt < 2.0) setCam(AXD.clone().multiplyScalar(-5).add(V(60, 30, 40)), V(0, 0, 0), 50); else { const P = daleS.root.position; setCam(P.clone().add(V(22, 8, 26)), P.clone().lerp(V(0, 0, 0), 0.25), 50); } return S.scene; }
+    case 'end': { S.earth.material.opacity = 1; const l = rinkState(A[11] + 1); blur.visible = false; L.hideAll(steam); puddle.visible = true; puddle.scale.setScalar(2.5); hole.visible = true; resetPose(dale); dale.root.position.set(0.9, 0, 0.5); dale.root.rotation.set(0, 0.3 + Math.sin(t * 3) * 0.3, Math.sin(t * 2.5) * 0.12); setFace(dale, { lid: 0.6, brow: -0.2, mouth: talk("I think", t) }); coach.root.position.set(-0.8, 0, 0.8); coach.root.rotation.set(0.35, 1.8, 0); setFace(coach, { lid: 0, brow: 1, mouth: 0.4 });
+      setCam(V(0.3, 1.9, 5.4), V(0.1, 1.1, 0.6), 50); return rk; }
+    case 'fact': { S.earth.material.opacity = 1; resetPose(daleL); daleL.root.rotation.y = 0.3; setFace(daleL, { lid: 0.35, brow: 0.3 }); blinkAt(daleL, t); lab.userData.top.rotation.y = t * 12; const k = ease(lt / dur); setCam(V(lerp(1.3, 1.0, k), 1.5, lerp(3.6, 3.2, k)), V(0.0, 1.25, 0), 46); return lab.scene; }
+  }
+}
+const rungs = [['60', 'rpm', 1, 'ONE SPIN A SECOND', 60], ['540', 'rpm', 3, 'FASTER THAN ANY SKATER', 540], ['4,860', 'rpm', 5, 'A CAR ENGINE', 4860], ['43,740', 'rpm', 7, 'FASTER THAN A JET ENGINE', 43740], ['393,660', 'rpm', 9, 'A DENTIST’S DRILL', 393660], ['3.5 M', 'rpm', 11, 'DRILLING THROUGH ROCK', 3.54e6], ['32 M', 'rpm', 13, 'STRAIGHT THROUGH THE EARTH', 3.19e7]]
+  .map(([v, unit, n, cmp, raw], i) => ({ v, unit, n, cmp, raw, at: A[n], gold: i === 6 }));
+const overlay = L.makeOverlay({ lines: H.LINES, titleL1: 'What if every spin on the ice was', titleHi: '3× faster', titleL2: '?', titleSize: 74, hudLabel: r => 'SPIN ' + r.n + '   ·   SPEED', rule: '×3 EVERY SPIN', rungs, barMin: 20, barMax: 1e8, barMarks: [[342, 'RECORD'], [400000, 'DRILL']], fact: { big: '342', unit: 'rpm', sub: 'FASTEST SPIN ON ICE SKATES · 2015' }, hideHUD: ['worse', 'fact', 'end', 'setup'], flashBig: [A[13]], flashSmall: [A[9] + 0.2] });
+L.makeFrame(shots, renderShot, overlay);
