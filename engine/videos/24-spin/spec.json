@@ -1,39 +1,234 @@
 {
- "id":"24-spin",
- "events":[
-  ["N","What if every spin on the ice was three times faster than the last?",{"title":1}],
-  ["N","Friday night at the ice rink. Dale's very first lesson."],
-  ["X","Arms in, and spin."],
-  ["A",1,{"dur":0.6,"off":0.3}],
-  ["N","Sixty rotations per minute. One spin a second.",{"rung":0}],
-  ["A",3,{"dur":0.6,"off":0.3}],
-  ["N","Five hundred forty. Faster than any figure skater ever.",{"rung":1}],
-  ["A",5,{"dur":0.6,"off":0.3}],
-  ["N","Forty eight hundred. A car engine. The ice is melting.",{"rung":2}],
-  ["A",7,{"dur":0.6,"off":0.3}],
-  ["N","Forty three thousand. Faster than a jet engine.",{"rung":3}],
-  ["A",9,{"dur":0.6,"off":0.3}],
-  ["N","Three hundred ninety thousand. A dentist's drill. He's going down.",{"rung":4}],
-  ["A",11,{"dur":0.6,"off":0.3}],
-  ["N","Three and a half million. He's drilling through solid rock.",{"rung":5}],
-  ["N","Then it got worse.",{"worse":1}],
-  ["A",13,{"dur":0.7,"off":0.35}],
-  ["N","Thirty two million. He drilled straight through the Earth.",{"rung":6}],
-  ["N","Back at the rink, the coach looks down the hole."],
-  ["I","I think I'm dizzy."],
-  ["N","The real part: the fastest spin ever on ice skates is three hundred forty two rotations per minute, set in twenty fifteen.",{"fact":1}]
+ "id": "24-spin",
+ "events": [
+  [
+   "N",
+   "What if every spin on the ice was three times faster than the last?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Friday night at the ice rink. Dale's very first lesson."
+  ],
+  [
+   "X",
+   "Arms in, and spin."
+  ],
+  [
+   "A",
+   1,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Sixty rotations per minute. One spin a second.",
+   {
+    "rung": 0
+   }
+  ],
+  [
+   "A",
+   3,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   5,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   7,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   9,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Three hundred ninety thousand. A dentist's drill. He's going down.",
+   {
+    "rung": 4
+   }
+  ],
+  [
+   "A",
+   11,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Three and a half million. He's drilling through solid rock.",
+   {
+    "rung": 5
+   }
+  ],
+  [
+   "N",
+   "Then it got worse.",
+   {
+    "worse": 1
+   }
+  ],
+  [
+   "A",
+   13,
+   {
+    "dur": 0.7,
+    "off": 0.35
+   }
+  ],
+  [
+   "N",
+   "Thirty two million. He drilled straight through the Earth.",
+   {
+    "rung": 6
+   }
+  ],
+  [
+   "N",
+   "Back at the rink, the coach looks down the hole."
+  ],
+  [
+   "I",
+   "I think I'm dizzy."
+  ],
+  [
+   "N",
+   "The real part: the fastest spin ever on ice skates is three hundred forty two rotations per minute, set in twenty fifteen.",
+   {
+    "fact": 1
+   }
+  ],
+  [
+   "N",
+   "So never ask:",
+   {
+    "loop": 1,
+    "gap": 0.25
+   }
+  ]
  ],
- "voices":{"X":["af_bella",1.0,"en-us"]},
- "music":{"style":"mystery","transpose":3},
- "sfx":[
-  {"type":"whoosh","at":"A1","dur":0.6,"gain":0.3},
-  {"type":"whoosh","at":"A3","dur":1.0,"gain":0.5},
-  {"type":"hum","at":"A5","dur":1.6,"f":160,"gain":0.4},
-  {"type":"hum","at":"A7","dur":1.8,"f":320,"gain":0.5},{"type":"wind","at":"A7","dur":2,"gain":0.5},
-  {"type":"hum","at":"A9","dur":2,"f":900,"gain":0.3},{"type":"crack","at":"A9","off":0.2,"gain":0.9},
-  {"type":"roar","at":"A11","dur":2.5,"gain":0.8},
-  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
-  {"type":"boom","at":"A13","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.0},{"type":"whoosh","at":"A13","off":1.6,"dur":1.4,"gain":0.6},
-  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
- ]
+ "voices": {
+  "X": [
+   "af_bella",
+   1.0,
+   "en-us"
+  ],
+  "N": [
+   "am_michael",
+   1.2,
+   "en-us"
+  ]
+ },
+ "music": {
+  "style": "mystery",
+  "transpose": 3
+ },
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "A1",
+   "dur": 0.6,
+   "gain": 0.3
+  },
+  {
+   "type": "whoosh",
+   "at": "A3",
+   "dur": 1.0,
+   "gain": 0.5
+  },
+  {
+   "type": "hum",
+   "at": "A5",
+   "dur": 1.6,
+   "f": 160,
+   "gain": 0.4
+  },
+  {
+   "type": "hum",
+   "at": "A7",
+   "dur": 1.8,
+   "f": 320,
+   "gain": 0.5
+  },
+  {
+   "type": "wind",
+   "at": "A7",
+   "dur": 2,
+   "gain": 0.5
+  },
+  {
+   "type": "hum",
+   "at": "A9",
+   "dur": 2,
+   "f": 900,
+   "gain": 0.3
+  },
+  {
+   "type": "crack",
+   "at": "A9",
+   "off": 0.2,
+   "gain": 0.9
+  },
+  {
+   "type": "roar",
+   "at": "A11",
+   "dur": 2.5,
+   "gain": 0.8
+  },
+  {
+   "type": "riser",
+   "at": "worse",
+   "off": -0.1,
+   "dur": 1.7,
+   "gain": 0.7
+  },
+  {
+   "type": "boom",
+   "at": "A13",
+   "dur": 4,
+   "f0": 60,
+   "f1": 20,
+   "dec": 1.2,
+   "gain": 1.0
+  },
+  {
+   "type": "whoosh",
+   "at": "A13",
+   "off": 1.6,
+   "dur": 1.4,
+   "gain": 0.6
+  },
+  {
+   "type": "ding",
+   "at": "fact",
+   "off": -0.2,
+   "gain": 0.3
+  }
+ ],
+ "cold": 0.9,
+ "tail": 0.12
 }
