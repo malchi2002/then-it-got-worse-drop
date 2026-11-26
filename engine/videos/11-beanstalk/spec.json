@@ -1,0 +1,38 @@
+{
+ "id":"11-beanstalk",
+ "events":[
+  ["N","What if every time you watered a plant, it grew three times taller than before?",{"title":1}],
+  ["N","Dale bought one bean. The guy said it was magic."],
+  ["I","It's a bean, Dale."],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","Ten centimeters. Cute.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Ninety centimeters. Taller than the dog.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Eight meters. Over the house.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Seventy three meters. Twenty stories of bean.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Six hundred fifty meters. Twice the Eiffel Tower.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Six kilometers. Above the clouds. A pilot just waved at it.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",22,{"dur":0.7,"off":0.35}],
+  ["N","One million kilometers. Past the Moon.",{"rung":6}],
+  ["N","Dale still has half a watering can."],
+  ["I","I'll save it for tomorrow."],
+  ["N","The real part: some bamboo can grow ninety one centimeters in a single day. The fastest plant on Earth.",{"fact":1}]
+ ],
+ "music":{"style":"bouncy","transpose":3},
+ "sfx":[
+  {"type":"pop","at":"A1","off":0.2,"gain":0.5},
+  {"type":"pop","at":"A3","off":0.1,"gain":0.6},{"type":"whoosh","at":"A3","dur":0.6,"gain":0.4},
+  {"type":"crack","at":"A5","off":0.3,"gain":0.6},{"type":"whoosh","at":"A5","dur":0.9,"gain":0.5},
+  {"type":"roar","at":"A7","dur":1.6,"gain":0.4},{"type":"crack","at":"A7","off":0.2,"gain":0.7},
+  {"type":"roar","at":"A9","dur":2.0,"gain":0.6},{"type":"boom","at":"A9","off":0.1,"dur":1.5,"gain":0.5},
+  {"type":"wind","at":"A11","dur":3,"gain":0.5},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"boom","at":"A22","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.0},{"type":"whoosh","at":"A22","off":0.2,"dur":1.5,"gain":0.6},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
