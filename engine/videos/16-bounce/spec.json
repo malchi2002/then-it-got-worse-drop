@@ -1,0 +1,42 @@
+{
+ "id":"16-bounce",
+ "events":[
+  ["N","What if every bounce on a trampoline went three times higher than the last?",{"title":1}],
+  ["N","Saturday at the trampoline park. Dale paid for one hour."],
+  ["X","No flips, sir."],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","Half a meter. A normal bounce.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Four and a half meters. Hello, ceiling.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Forty meters. There is no ceiling now.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Three hundred sixty meters. Nearly the Empire State Building.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Three kilometers. Above the clouds.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Thirty kilometers. Three times higher than planes fly.",{"rung":5}],
+  ["A",13,{"dur":0.6,"off":0.3}],
+  ["N","Two hundred sixty kilometers. Space. Still no flips.",{"rung":6}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",20,{"dur":0.7,"off":0.35}],
+  ["N","Five hundred eighty million kilometers. Almost to Jupiter.",{"rung":7}],
+  ["N","Back at the park, his hour is up."],
+  ["I","Five more minutes!"],
+  ["N","The real part: a NASA study found bouncing on a trampoline can be a better workout than jogging.",{"fact":1}]
+ ],
+ "voices":{"X":["am_puck",1.0,"en-us"]},
+ "music":{"style":"bouncy","transpose":4},
+ "sfx":[
+  {"type":"pop","at":"A1","off":-0.05,"gain":0.5},
+  {"type":"pop","at":"A3","off":-0.05,"gain":0.6},{"type":"thud","at":"A3","off":0.55,"gain":0.6},
+  {"type":"pop","at":"A5","off":-0.05,"gain":0.7},{"type":"crack","at":"A5","off":0.3,"gain":0.9},{"type":"boom","at":"A5","off":0.3,"dur":1.2,"gain":0.5},
+  {"type":"whoosh","at":"A7","dur":1.2,"gain":0.6},
+  {"type":"wind","at":"A9","dur":2.4,"gain":0.5},
+  {"type":"whoosh","at":"A11","dur":1.4,"gain":0.6},
+  {"type":"riser","at":"A13","dur":2.0,"gain":0.4},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"boom","at":"A20","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.0},{"type":"whoosh","at":"A20","off":0.2,"dur":1.6,"gain":0.6},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
