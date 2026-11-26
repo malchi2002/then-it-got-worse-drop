@@ -1,0 +1,36 @@
+{
+ "id":"10-flush",
+ "events":[
+  ["N","What if every time you flushed, the toilet pulled three times more water than the last?",{"title":1}],
+  ["N","Monday morning. Dale's toilet is acting weird."],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","Six liters. A normal flush.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Fifty four liters. Goodbye, rubber duck.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Five hundred liters. The bathtub drains through the toilet.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Four thousand liters. The neighbor's hot tub. Neighbor still in it.",{"rung":3}],
+  ["A",10,{"dur":0.6,"off":0.3}],
+  ["N","One hundred eighteen thousand. The swimming pool down the street.",{"rung":4}],
+  ["A",13,{"dur":0.6,"off":0.3}],
+  ["N","Three million liters. More than an Olympic pool.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",27,{"dur":0.7,"off":0.35}],
+  ["N","Fifteen cubic kilometers. Two entire Loch Nesses.",{"rung":6}],
+  ["N","Somewhere in Scotland, a monster is very confused."],
+  ["N","The real part: a modern toilet uses about six liters per flush. Older ones could use more than thirteen.",{"fact":1}]
+ ],
+ "music":{"style":"sneaky","transpose":-2},
+ "sfx":[
+  {"type":"splash","at":"A1","dur":1.5,"gain":0.5},
+  {"type":"splash","at":"A3","dur":2,"gain":0.7},{"type":"pop","at":"A3","off":0.8,"gain":0.6},
+  {"type":"splash","at":"A5","dur":2.5,"gain":0.8},{"type":"wind","at":"A5","dur":2.5,"gain":0.3},
+  {"type":"roar","at":"A7","dur":3,"gain":0.6},{"type":"splash","at":"A7","dur":3,"gain":0.6},
+  {"type":"roar","at":"A10","dur":3.5,"gain":0.8},
+  {"type":"roar","at":"A13","dur":3.5,"gain":0.9},{"type":"boom","at":"A13","off":0.5,"dur":2,"gain":0.6},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"roar","at":"A27","dur":6,"gain":1.0},{"type":"boom","at":"A27","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.0},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
