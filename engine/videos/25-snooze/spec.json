@@ -1,42 +1,270 @@
 {
- "id":"25-snooze",
- "events":[
-  ["N","What if every time you hit snooze, you slept three times longer?",{"title":1}],
-  ["N","Monday, six A M. Dale has work."],
-  ["X","Dale! You're going to be late!"],
-  ["A",1,{"dur":0.6,"off":0.3}],
-  ["N","Nine minutes. A normal snooze.",{"rung":0}],
-  ["A",3,{"dur":0.6,"off":0.3}],
-  ["N","Eighty one minutes. He missed the bus.",{"rung":1}],
-  ["A",5,{"dur":0.6,"off":0.3}],
-  ["N","Twelve hours. It's dark again.",{"rung":2}],
-  ["A",7,{"dur":0.6,"off":0.3}],
-  ["N","Four and a half days. Two hundred missed calls.",{"rung":3}],
-  ["A",9,{"dur":0.6,"off":0.3}],
-  ["N","Forty one days. The plants have taken over.",{"rung":4}],
-  ["A",11,{"dur":0.6,"off":0.3}],
-  ["N","One year. He slept through his own birthday.",{"rung":5}],
-  ["A",13,{"dur":0.6,"off":0.3}],
-  ["N","Nine years. There's a tree growing through the bed.",{"rung":6}],
-  ["N","Then it got worse.",{"worse":1}],
-  ["A",17,{"dur":0.7,"off":0.35}],
-  ["N","Seven hundred thirty six years. He wakes up in the year twenty seven sixty two.",{"rung":7}],
-  ["N","The robots are very polite about it."],
-  ["I","Five more minutes."],
-  ["N","The real part: the longest anyone has stayed awake on record is about eleven days, by a student in nineteen sixty four.",{"fact":1}]
+ "id": "25-snooze",
+ "events": [
+  [
+   "N",
+   "What if every time you hit snooze, you slept three times longer?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Monday, six A M. Dale has work."
+  ],
+  [
+   "X",
+   "Dale! You're going to be late!"
+  ],
+  [
+   "A",
+   1,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Nine minutes. A normal snooze.",
+   {
+    "rung": 0
+   }
+  ],
+  [
+   "A",
+   3,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   5,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   7,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   9,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   11,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "One year. He slept through his own birthday.",
+   {
+    "rung": 5
+   }
+  ],
+  [
+   "A",
+   13,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Nine years. There's a tree growing through the bed.",
+   {
+    "rung": 6
+   }
+  ],
+  [
+   "N",
+   "Then it got worse.",
+   {
+    "worse": 1
+   }
+  ],
+  [
+   "A",
+   17,
+   {
+    "dur": 0.7,
+    "off": 0.35
+   }
+  ],
+  [
+   "N",
+   "Seven hundred thirty six years. He wakes up in the year twenty seven sixty two.",
+   {
+    "rung": 7
+   }
+  ],
+  [
+   "N",
+   "The robots are very polite about it."
+  ],
+  [
+   "I",
+   "Five more minutes."
+  ],
+  [
+   "N",
+   "The real part: the longest anyone has stayed awake on record is about eleven days, by a student in nineteen sixty four.",
+   {
+    "fact": 1
+   }
+  ],
+  [
+   "N",
+   "So never ask:",
+   {
+    "loop": 1,
+    "gap": 0.25
+   }
+  ]
  ],
- "voices":{"X":["af_sky",1.05,"en-us"]},
- "music":{"style":"mystery","transpose":-1},
- "sfx":[
-  {"type":"ding","at":"A1","off":-0.4,"gain":0.6},{"type":"thud","at":"A1","off":-0.1,"gain":0.4},
-  {"type":"ding","at":"A3","off":-0.4,"gain":0.6},{"type":"thud","at":"A3","off":-0.1,"gain":0.4},
-  {"type":"ding","at":"A5","off":-0.4,"gain":0.6},{"type":"whoosh","at":"A5","dur":1.0,"gain":0.4},
-  {"type":"ding","at":"A7","off":-0.4,"gain":0.6},{"type":"whoosh","at":"A7","dur":1.2,"gain":0.5},
-  {"type":"whoosh","at":"A9","dur":1.4,"gain":0.5},
-  {"type":"whoosh","at":"A11","dur":1.6,"gain":0.6},{"type":"pop","at":"A11","off":0.6,"gain":0.4},
-  {"type":"crack","at":"A13","off":0.4,"gain":0.8},{"type":"whoosh","at":"A13","dur":1.8,"gain":0.6},
-  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
-  {"type":"boom","at":"A17","dur":3.5,"f0":60,"f1":20,"dec":1.2,"gain":0.9},{"type":"hum","at":"A17","off":0.6,"dur":3,"f":220,"gain":0.4},
-  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
- ]
+ "voices": {
+  "X": [
+   "af_sky",
+   1.05,
+   "en-us"
+  ],
+  "N": [
+   "am_michael",
+   1.2,
+   "en-us"
+  ]
+ },
+ "music": {
+  "style": "mystery",
+  "transpose": -1
+ },
+ "sfx": [
+  {
+   "type": "ding",
+   "at": "A1",
+   "off": -0.4,
+   "gain": 0.6
+  },
+  {
+   "type": "thud",
+   "at": "A1",
+   "off": -0.1,
+   "gain": 0.4
+  },
+  {
+   "type": "ding",
+   "at": "A3",
+   "off": -0.4,
+   "gain": 0.6
+  },
+  {
+   "type": "thud",
+   "at": "A3",
+   "off": -0.1,
+   "gain": 0.4
+  },
+  {
+   "type": "ding",
+   "at": "A5",
+   "off": -0.4,
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "A5",
+   "dur": 1.0,
+   "gain": 0.4
+  },
+  {
+   "type": "ding",
+   "at": "A7",
+   "off": -0.4,
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "A7",
+   "dur": 1.2,
+   "gain": 0.5
+  },
+  {
+   "type": "whoosh",
+   "at": "A9",
+   "dur": 1.4,
+   "gain": 0.5
+  },
+  {
+   "type": "whoosh",
+   "at": "A11",
+   "dur": 1.6,
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "A11",
+   "off": 0.6,
+   "gain": 0.4
+  },
+  {
+   "type": "crack",
+   "at": "A13",
+   "off": 0.4,
+   "gain": 0.8
+  },
+  {
+   "type": "whoosh",
+   "at": "A13",
+   "dur": 1.8,
+   "gain": 0.6
+  },
+  {
+   "type": "riser",
+   "at": "worse",
+   "off": -0.1,
+   "dur": 1.7,
+   "gain": 0.7
+  },
+  {
+   "type": "boom",
+   "at": "A17",
+   "dur": 3.5,
+   "f0": 60,
+   "f1": 20,
+   "dec": 1.2,
+   "gain": 0.9
+  },
+  {
+   "type": "hum",
+   "at": "A17",
+   "off": 0.6,
+   "dur": 3,
+   "f": 220,
+   "gain": 0.4
+  },
+  {
+   "type": "ding",
+   "at": "fact",
+   "off": -0.2,
+   "gain": 0.3
+  }
+ ],
+ "cold": 0.9,
+ "tail": 0.12
 }
