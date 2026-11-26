@@ -1,35 +1,218 @@
 {
- "id":"07-spicy",
- "events":[
-  ["N","What if every bite of your taco was three times spicier than the last?",{"title":1}],
-  ["N","Saturday. Dale says he can handle spicy."],
-  ["I","You sure about that, pal?"],
-  ["A",1,{"dur":0.5,"off":0.25}],
-  ["N","Two thousand Scoville. Sriracha. Easy.",{"rung":0}],
-  ["A",2,{"dur":0.5,"off":0.25}],
-  ["N","Six thousand. A jalapeño. Still fine.",{"rung":1}],
-  ["A",3,{"dur":0.5,"off":0.25}],
-  ["N","Twenty thousand. A serrano. He is sweating.",{"rung":2}],
-  ["A",5,{"dur":0.5,"off":0.25}],
-  ["N","One hundred seventy eight thousand. Habanero. Steam out of his ears.",{"rung":3}],
-  ["A",7,{"dur":0.5,"off":0.25}],
-  ["N","One point six million. Hotter than a ghost pepper. He can see sounds.",{"rung":4}],
-  ["A",8,{"dur":0.5,"off":0.25}],
-  ["N","Four point eight million. Police pepper spray. In taco form.",{"rung":5}],
-  ["N","Then it got worse.",{"worse":1}],
-  ["A",11,{"dur":0.6,"off":0.3}],
-  ["N","One hundred thirty million. Eight times pure capsaicin. Dale is now a rocket.",{"rung":6}],
-  ["I","So... mild next time?"],
-  ["N","The real part: a ghost pepper is about one million Scoville units. Pure capsaicin is about sixteen million.",{"fact":1}]
+ "id": "07-spicy",
+ "events": [
+  [
+   "N",
+   "What if every bite of your taco was three times spicier than the last?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Saturday. Dale says he can handle spicy."
+  ],
+  [
+   "I",
+   "You sure about that, pal?"
+  ],
+  [
+   "A",
+   1,
+   {
+    "dur": 0.5,
+    "off": 0.25
+   }
+  ],
+  [
+   "N",
+   "Two thousand Scoville. Sriracha. Easy.",
+   {
+    "rung": 0
+   }
+  ],
+  [
+   "A",
+   2,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   3,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   5,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   7,
+   {
+    "dur": 0.5,
+    "off": 0.25
+   }
+  ],
+  [
+   "N",
+   "One point six million. Hotter than a ghost pepper. He can see sounds.",
+   {
+    "rung": 4
+   }
+  ],
+  [
+   "A",
+   8,
+   {
+    "dur": 0.5,
+    "off": 0.25
+   }
+  ],
+  [
+   "N",
+   "Four point eight million. Police pepper spray. In taco form.",
+   {
+    "rung": 5
+   }
+  ],
+  [
+   "N",
+   "Then it got worse.",
+   {
+    "worse": 1
+   }
+  ],
+  [
+   "A",
+   11,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "One hundred thirty million. Eight times pure capsaicin. Dale is now a rocket.",
+   {
+    "rung": 6
+   }
+  ],
+  [
+   "I",
+   "So... mild next time?"
+  ],
+  [
+   "N",
+   "The real part: a ghost pepper is about one million Scoville units. Pure capsaicin is about sixteen million.",
+   {
+    "fact": 1
+   }
+  ],
+  [
+   "N",
+   "So never ask:",
+   {
+    "loop": 1,
+    "gap": 0.25
+   }
+  ]
  ],
- "music":{"style":"march","transpose":-3},
- "sfx":[
-  {"type":"pop","at":"A1","off":0.1,"gain":0.3},{"type":"pop","at":"A2","off":0.1,"gain":0.3},{"type":"pop","at":"A3","off":0.1,"gain":0.3},
-  {"type":"hum","at":"A5","dur":2.5,"f":880,"gain":0.12},{"type":"wind","at":"A5","off":0.3,"dur":2,"gain":0.3},
-  {"type":"hum","at":"A7","dur":3,"f":1320,"gain":0.12},
-  {"type":"roar","at":"A8","dur":3.5,"gain":0.6},
-  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
-  {"type":"roar","at":"A11","dur":6,"gain":1.0},{"type":"boom","at":"A11","dur":4,"f0":70,"f1":22,"dec":1.2,"gain":1.1},
-  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
- ]
+ "music": {
+  "style": "march",
+  "transpose": -3
+ },
+ "sfx": [
+  {
+   "type": "pop",
+   "at": "A1",
+   "off": 0.1,
+   "gain": 0.3
+  },
+  {
+   "type": "pop",
+   "at": "A2",
+   "off": 0.1,
+   "gain": 0.3
+  },
+  {
+   "type": "pop",
+   "at": "A3",
+   "off": 0.1,
+   "gain": 0.3
+  },
+  {
+   "type": "hum",
+   "at": "A5",
+   "dur": 2.5,
+   "f": 880,
+   "gain": 0.12
+  },
+  {
+   "type": "wind",
+   "at": "A5",
+   "off": 0.3,
+   "dur": 2,
+   "gain": 0.3
+  },
+  {
+   "type": "hum",
+   "at": "A7",
+   "dur": 3,
+   "f": 1320,
+   "gain": 0.12
+  },
+  {
+   "type": "roar",
+   "at": "A8",
+   "dur": 3.5,
+   "gain": 0.6
+  },
+  {
+   "type": "riser",
+   "at": "worse",
+   "off": -0.1,
+   "dur": 1.7,
+   "gain": 0.7
+  },
+  {
+   "type": "roar",
+   "at": "A11",
+   "dur": 6,
+   "gain": 1.0
+  },
+  {
+   "type": "boom",
+   "at": "A11",
+   "dur": 4,
+   "f0": 70,
+   "f1": 22,
+   "dec": 1.2,
+   "gain": 1.1
+  },
+  {
+   "type": "ding",
+   "at": "fact",
+   "off": -0.2,
+   "gain": 0.3
+  }
+ ],
+ "cold": 0.9,
+ "tail": 0.12,
+ "voices": {
+  "N": [
+   "am_michael",
+   1.2,
+   "en-us"
+  ]
+ }
 }
