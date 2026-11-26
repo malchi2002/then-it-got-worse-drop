@@ -3,7 +3,7 @@ const { THREE, V, mat, mesh, box, clamp, ease, easeOut, lerp, setCam, rng, makeG
 const TL = window.TL; const H = L.tlHelpers(TL); const A = {}; TL.tl.filter(x => x.type === 'act').forEach(x => A[x.n] = x.blast);
 const line = H.line;
 const talk = (p, t) => { const l = line(p); return t > l.t && t < l.end ? Math.abs(Math.sin(t * 14)) * 0.5 : 0; };
-const HIT = 38.05;
+const HIT = H.line('Ow').t - 0.36;
 const stoneG = new THREE.SphereGeometry(0.05, 14, 10); stoneG.scale(1, 0.4, 0.8); const stoneM = mat(0x6a6e74, { r: 0.6 });
 function hop(p0, p1, q, hgt) { const p = p0.clone().lerp(p1, q); p.y += Math.sin(q * Math.PI) * hgt; return p; }
 // ---------- lake ----------
