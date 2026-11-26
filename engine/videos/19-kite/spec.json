@@ -1,39 +1,217 @@
 {
- "id":"19-kite",
- "events":[
-  ["N","What if every time you let out string, your kite flew three times higher?",{"title":1}],
-  ["N","Sunday at the beach. Dale bought a kite shaped like a fish."],
-  ["X","Mine's higher."],
-  ["A",1,{"dur":0.6,"off":0.3}],
-  ["N","Ten meters. A normal kite.",{"rung":0}],
-  ["A",3,{"dur":0.6,"off":0.3}],
-  ["N","Ninety meters. The seagulls are confused.",{"rung":1}],
-  ["A",5,{"dur":0.6,"off":0.3}],
-  ["N","Eight hundred meters. Almost the Burj Khalifa.",{"rung":2}],
-  ["A",7,{"dur":0.6,"off":0.3}],
-  ["N","Seven kilometers. Almost Mount Everest.",{"rung":3}],
-  ["A",9,{"dur":0.6,"off":0.3}],
-  ["N","Sixty five kilometers. Past every cloud and every plane.",{"rung":4}],
-  ["A",11,{"dur":0.6,"off":0.3}],
-  ["N","Five hundred ninety kilometers. Above the space station.",{"rung":5}],
-  ["N","Then it got worse.",{"worse":1}],
-  ["A",16,{"dur":0.7,"off":0.35}],
-  ["N","One hundred forty three million kilometers. Almost to the Sun. The kite is on fire.",{"rung":6}],
-  ["N","Dale is still holding the string."],
-  ["I","Mine's higher."],
-  ["N","The real part: the highest single kite ever flown reached about four thousand eight hundred eighty meters, in Australia in twenty fourteen.",{"fact":1}]
+ "id": "19-kite",
+ "events": [
+  [
+   "N",
+   "What if every time you let out string, your kite flew three times higher?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Sunday at the beach. Dale bought a kite shaped like a fish."
+  ],
+  [
+   "X",
+   "Mine's higher."
+  ],
+  [
+   "A",
+   1,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Ten meters. A normal kite.",
+   {
+    "rung": 0
+   }
+  ],
+  [
+   "A",
+   3,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   5,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   7,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   9,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Sixty five kilometers. Past every cloud and every plane.",
+   {
+    "rung": 4
+   }
+  ],
+  [
+   "A",
+   11,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Five hundred ninety kilometers. Above the space station.",
+   {
+    "rung": 5
+   }
+  ],
+  [
+   "N",
+   "Then it got worse.",
+   {
+    "worse": 1
+   }
+  ],
+  [
+   "A",
+   16,
+   {
+    "dur": 0.7,
+    "off": 0.35
+   }
+  ],
+  [
+   "N",
+   "One hundred forty three million kilometers. Almost to the Sun. The kite is on fire.",
+   {
+    "rung": 6
+   }
+  ],
+  [
+   "N",
+   "Dale is still holding the string."
+  ],
+  [
+   "I",
+   "Mine's higher."
+  ],
+  [
+   "N",
+   "The real part: the highest single kite ever flown reached about four thousand eight hundred eighty meters, in Australia in twenty fourteen.",
+   {
+    "fact": 1
+   }
+  ],
+  [
+   "N",
+   "So never ask:",
+   {
+    "loop": 1,
+    "gap": 0.25
+   }
+  ]
  ],
- "voices":{"X":["af_sky",1.1,"en-us"]},
- "music":{"style":"bouncy","transpose":-2},
- "sfx":[
-  {"type":"whoosh","at":"A1","dur":0.6,"gain":0.3},
-  {"type":"whoosh","at":"A3","dur":0.8,"gain":0.4},
-  {"type":"wind","at":"A5","dur":2,"gain":0.4},
-  {"type":"wind","at":"A7","dur":2.4,"gain":0.5},
-  {"type":"whoosh","at":"A9","dur":1.4,"gain":0.6},
-  {"type":"riser","at":"A11","dur":2.0,"gain":0.4},
-  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
-  {"type":"roar","at":"A16","dur":3.5,"gain":0.8},{"type":"boom","at":"A16","dur":3,"f0":60,"f1":20,"gain":0.8},
-  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
- ]
+ "voices": {
+  "X": [
+   "af_sky",
+   1.1,
+   "en-us"
+  ],
+  "N": [
+   "am_michael",
+   1.2,
+   "en-us"
+  ]
+ },
+ "music": {
+  "style": "bouncy",
+  "transpose": -2
+ },
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "A1",
+   "dur": 0.6,
+   "gain": 0.3
+  },
+  {
+   "type": "whoosh",
+   "at": "A3",
+   "dur": 0.8,
+   "gain": 0.4
+  },
+  {
+   "type": "wind",
+   "at": "A5",
+   "dur": 2,
+   "gain": 0.4
+  },
+  {
+   "type": "wind",
+   "at": "A7",
+   "dur": 2.4,
+   "gain": 0.5
+  },
+  {
+   "type": "whoosh",
+   "at": "A9",
+   "dur": 1.4,
+   "gain": 0.6
+  },
+  {
+   "type": "riser",
+   "at": "A11",
+   "dur": 2.0,
+   "gain": 0.4
+  },
+  {
+   "type": "riser",
+   "at": "worse",
+   "off": -0.1,
+   "dur": 1.7,
+   "gain": 0.7
+  },
+  {
+   "type": "roar",
+   "at": "A16",
+   "dur": 3.5,
+   "gain": 0.8
+  },
+  {
+   "type": "boom",
+   "at": "A16",
+   "dur": 3,
+   "f0": 60,
+   "f1": 20,
+   "gain": 0.8
+  },
+  {
+   "type": "ding",
+   "at": "fact",
+   "off": -0.2,
+   "gain": 0.3
+  }
+ ],
+ "cold": 0.9,
+ "tail": 0.12
 }
