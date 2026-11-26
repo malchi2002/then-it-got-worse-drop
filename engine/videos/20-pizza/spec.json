@@ -1,0 +1,39 @@
+{
+ "id":"20-pizza",
+ "events":[
+  ["N","What if every pizza you ordered was three times bigger than the last?",{"title":1}],
+  ["N","Friday night. Dale is very hungry."],
+  ["X","One large pepperoni?"],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","Thirty centimeters. A normal pizza.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Two point seven meters. Bigger than the table.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Twenty four meters. It doesn't fit through the door.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Two hundred meters. Two football fields of pepperoni.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Two kilometers. The neighborhood is under cheese.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Eighteen kilometers. The whole city.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",17,{"dur":0.7,"off":0.35}],
+  ["N","Thirteen thousand kilometers. Wider than the Earth.",{"rung":6}],
+  ["N","Delivery is running a little late."],
+  ["I","Can I get extra cheese?"],
+  ["N","The real part: one of the biggest pizzas ever made, in Rome in twenty twelve, was about forty meters across.",{"fact":1}]
+ ],
+ "voices":{"X":["am_puck",0.95,"en-us"]},
+ "music":{"style":"bouncy","transpose":0},
+ "sfx":[
+  {"type":"pop","at":"A1","gain":0.4},
+  {"type":"thud","at":"A3","off":0.2,"gain":0.6},
+  {"type":"crack","at":"A5","off":0.2,"gain":0.8},{"type":"boom","at":"A5","off":0.2,"dur":1.2,"gain":0.5},
+  {"type":"thud","at":"A7","off":0.3,"gain":0.9},{"type":"whoosh","at":"A7","dur":1.0,"gain":0.5},
+  {"type":"boom","at":"A9","off":0.3,"dur":2,"gain":0.8},
+  {"type":"boom","at":"A11","off":0.3,"dur":2.5,"gain":0.9},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"boom","at":"A17","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.0},{"type":"whoosh","at":"A17","off":0.2,"dur":1.8,"gain":0.6},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
