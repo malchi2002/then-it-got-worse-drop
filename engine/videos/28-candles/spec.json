@@ -1,0 +1,40 @@
+{
+ "id":"28-candles",
+ "events":[
+  ["N","What if every birthday cake had three times more candles than the last?",{"title":1}],
+  ["N","Dale's birthday party. The cake keeps coming back."],
+  ["X","Make another wish, sweetie!"],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","One candle. Make a wish.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Nine. A normal party.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Eighty one. The smoke alarm goes off.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Seven hundred twenty nine. The fire department is on standby.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Sixty five hundred. The cake is a bonfire.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Fifty nine thousand. You can see it from space.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",16,{"dur":0.7,"off":0.35}],
+  ["N","Fourteen million candles. Pilots are using it to navigate.",{"rung":6}],
+  ["N","Dale takes a very deep breath."],
+  ["I","Happy birthday to me."],
+  ["N","The real part: the record for most candles on one cake is seventy two thousand five hundred eighty five, set in New York in twenty sixteen.",{"fact":1}]
+ ],
+ "voices":{"X":["af_sky",1.0,"en-us"]},
+ "music":{"style":"bouncy","transpose":5},
+ "sfx":[
+  {"type":"pop","at":"A1","gain":0.4},
+  {"type":"pop","at":"A3","gain":0.5},
+  {"type":"ding","at":"A5","off":0.4,"gain":0.6},{"type":"ding","at":"A5","off":0.7,"gain":0.6},{"type":"ding","at":"A5","off":1.0,"gain":0.6},
+  {"type":"hum","at":"A7","dur":2,"f":120,"gain":0.4},
+  {"type":"roar","at":"A9","dur":2.4,"gain":0.6},
+  {"type":"roar","at":"A11","dur":2.4,"gain":0.7},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"boom","at":"A16","dur":3.5,"f0":60,"f1":20,"dec":1.2,"gain":0.9},{"type":"roar","at":"A16","off":0.2,"dur":3,"gain":0.6},
+  {"type":"wind","at":"36.4","dur":1.0,"gain":0.4},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
