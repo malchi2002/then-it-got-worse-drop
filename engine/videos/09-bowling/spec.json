@@ -1,39 +1,279 @@
 {
- "id":"09-bowling",
- "events":[
-  ["N","What if every bowling ball you rolled went three times faster than the last?",{"title":1}],
-  ["N","Sunday night. Dale needs one strike to win."],
-  ["I","Just don't embarrass us."],
-  ["A",1,{"dur":0.6,"off":0.3}],
-  ["N","Twenty nine kilometers per hour. One pin.",{"rung":0}],
-  ["A",2,{"dur":0.6,"off":0.3}],
-  ["N","Eighty seven. Highway speed. The pins are gone.",{"rung":1}],
-  ["A",3,{"dur":0.6,"off":0.3}],
-  ["N","Two hundred sixty. Through the back wall.",{"rung":2}],
-  ["A",4,{"dur":0.6,"off":0.3}],
-  ["N","Seven hundred eighty. Through the parking lot. Through the mall.",{"rung":3}],
-  ["A",5,{"dur":0.6,"off":0.3}],
-  ["N","Two thousand three hundred. Twice the speed of sound. Every window on the street.",{"rung":4}],
-  ["A",6,{"dur":0.6,"off":0.3}],
-  ["N","Seven thousand. Faster than a bullet. It's in another state.",{"rung":5}],
-  ["N","Then it got worse.",{"worse":1}],
-  ["A",8,{"dur":0.7,"off":0.35}],
-  ["N","Sixty three thousand kilometers per hour. Fast enough to leave the solar system.",{"rung":6}],
-  ["N","The scoreboard says strike."],
-  ["I","Technically, that counts."],
-  ["N","The real part: a normal bowling ball travels about twenty nine kilometers per hour. It takes around two and a half seconds to reach the pins.",{"fact":1}]
+ "id": "09-bowling",
+ "events": [
+  [
+   "N",
+   "What if every bowling ball you rolled went three times faster than the last?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Sunday night. Dale needs one strike to win."
+  ],
+  [
+   "I",
+   "Just don't embarrass us."
+  ],
+  [
+   "A",
+   1,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Twenty nine kilometers per hour. One pin.",
+   {
+    "rung": 0
+   }
+  ],
+  [
+   "A",
+   2,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   3,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   4,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   5,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Two thousand three hundred. Twice the speed of sound. Every window on the street.",
+   {
+    "rung": 4
+   }
+  ],
+  [
+   "A",
+   6,
+   {
+    "dur": 0.6,
+    "off": 0.3
+   }
+  ],
+  [
+   "N",
+   "Seven thousand. Faster than a bullet. It's in another state.",
+   {
+    "rung": 5
+   }
+  ],
+  [
+   "N",
+   "Then it got worse.",
+   {
+    "worse": 1
+   }
+  ],
+  [
+   "A",
+   8,
+   {
+    "dur": 0.7,
+    "off": 0.35
+   }
+  ],
+  [
+   "N",
+   "Sixty three thousand kilometers per hour. Fast enough to leave the solar system.",
+   {
+    "rung": 6
+   }
+  ],
+  [
+   "N",
+   "The scoreboard says strike."
+  ],
+  [
+   "I",
+   "Technically, that counts."
+  ],
+  [
+   "N",
+   "The real part: a normal bowling ball travels about twenty nine kilometers per hour. It takes around two and a half seconds to reach the pins.",
+   {
+    "fact": 1
+   }
+  ],
+  [
+   "N",
+   "So never ask:",
+   {
+    "loop": 1,
+    "gap": 0.25
+   }
+  ]
  ],
- "music":{"style":"march","transpose":2},
- "sfx":[
-  {"type":"hum","at":"A1","dur":1.5,"f":60,"gain":0.2},{"type":"thud","at":"A1","off":1.6,"gain":0.3},
-  {"type":"hum","at":"A2","dur":1,"f":70,"gain":0.3},{"type":"crack","at":"A2","off":0.55,"gain":0.8},{"type":"crack","at":"A2","off":0.6,"gain":0.6},
-  {"type":"crack","at":"A3","off":0.3,"gain":0.8},{"type":"boom","at":"A3","off":0.4,"dur":1.5,"gain":0.7},
-  {"type":"whoosh","at":"A4","dur":0.8,"gain":0.6},{"type":"boom","at":"A4","off":1.0,"dur":1.6,"gain":0.7},{"type":"glass","at":"A4","off":1.1,"dur":1.5,"gain":0.4},
-  {"type":"crack","at":"A5","off":0.1,"gain":1.2},{"type":"crack","at":"A5","off":0.22,"gain":1.0},{"type":"boom","at":"A5","dur":2.5,"gain":1.0},{"type":"glass","at":"A5","off":0.4,"dur":3,"gain":0.6},
-  {"type":"whoosh","at":"A6","dur":0.5,"gain":0.8},
-  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
-  {"type":"boom","at":"A8","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.1},{"type":"roar","at":"A8","dur":4,"gain":0.7},
-  {"type":"ding","at":"A8","off":6.2,"gain":0.6},
-  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
- ]
+ "music": {
+  "style": "march",
+  "transpose": 2
+ },
+ "sfx": [
+  {
+   "type": "hum",
+   "at": "A1",
+   "dur": 1.5,
+   "f": 60,
+   "gain": 0.2
+  },
+  {
+   "type": "thud",
+   "at": "A1",
+   "off": 1.6,
+   "gain": 0.3
+  },
+  {
+   "type": "hum",
+   "at": "A2",
+   "dur": 1,
+   "f": 70,
+   "gain": 0.3
+  },
+  {
+   "type": "crack",
+   "at": "A2",
+   "off": 0.55,
+   "gain": 0.8
+  },
+  {
+   "type": "crack",
+   "at": "A2",
+   "off": 0.6,
+   "gain": 0.6
+  },
+  {
+   "type": "crack",
+   "at": "A3",
+   "off": 0.3,
+   "gain": 0.8
+  },
+  {
+   "type": "boom",
+   "at": "A3",
+   "off": 0.4,
+   "dur": 1.5,
+   "gain": 0.7
+  },
+  {
+   "type": "whoosh",
+   "at": "A4",
+   "dur": 0.8,
+   "gain": 0.6
+  },
+  {
+   "type": "boom",
+   "at": "A4",
+   "off": 1.0,
+   "dur": 1.6,
+   "gain": 0.7
+  },
+  {
+   "type": "glass",
+   "at": "A4",
+   "off": 1.1,
+   "dur": 1.5,
+   "gain": 0.4
+  },
+  {
+   "type": "crack",
+   "at": "A5",
+   "off": 0.1,
+   "gain": 1.2
+  },
+  {
+   "type": "crack",
+   "at": "A5",
+   "off": 0.22,
+   "gain": 1.0
+  },
+  {
+   "type": "boom",
+   "at": "A5",
+   "dur": 2.5,
+   "gain": 1.0
+  },
+  {
+   "type": "glass",
+   "at": "A5",
+   "off": 0.4,
+   "dur": 3,
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "A6",
+   "dur": 0.5,
+   "gain": 0.8
+  },
+  {
+   "type": "riser",
+   "at": "worse",
+   "off": -0.1,
+   "dur": 1.7,
+   "gain": 0.7
+  },
+  {
+   "type": "boom",
+   "at": "A8",
+   "dur": 4,
+   "f0": 60,
+   "f1": 20,
+   "dec": 1.2,
+   "gain": 1.1
+  },
+  {
+   "type": "roar",
+   "at": "A8",
+   "dur": 4,
+   "gain": 0.7
+  },
+  {
+   "type": "ding",
+   "at": "A8",
+   "off": 6.2,
+   "gain": 0.6
+  },
+  {
+   "type": "ding",
+   "at": "fact",
+   "off": -0.2,
+   "gain": 0.3
+  }
+ ],
+ "cold": 0.9,
+ "tail": 0.12,
+ "voices": {
+  "N": [
+   "am_michael",
+   1.2,
+   "en-us"
+  ]
+ }
 }
