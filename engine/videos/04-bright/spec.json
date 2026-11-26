@@ -1,39 +1,243 @@
 {
- "id":"04-bright",
- "events":[
-  ["N","What if your phone got three times brighter every time you tapped it?",{"title":1}],
-  ["N","Midnight. Dale just wants to check one text."],
-  ["A",1,{"dur":0.45,"off":0.15}],
-  ["N","One nit. Night mode.",{"rung":0}],
-  ["A",7,{"dur":0.45,"off":0.15}],
-  ["N","Seven hundred nits. A normal phone at noon.",{"rung":1}],
-  ["A",9,{"dur":0.45,"off":0.15}],
-  ["N","Six thousand. His shadow is now on the ceiling.",{"rung":2}],
-  ["A",11,{"dur":0.45,"off":0.15}],
-  ["N","Fifty nine thousand. Every window in the house is a flashlight.",{"rung":3}],
-  ["A",13,{"dur":0.45,"off":0.15}],
-  ["N","Half a million. The neighbors think it's morning. The birds start singing.",{"rung":4}],
-  ["A",17,{"dur":0.45,"off":0.15}],
-  ["N","Forty three million. You can see his phone from space.",{"rung":5}],
-  ["N","Then it got worse.",{"worse":1}],
-  ["A",21,{"dur":0.6,"off":0.2}],
-  ["N","Three and a half billion nits. Twice as bright as the surface of the Sun.",{"rung":6}],
-  ["N","The text said:"],
-  ["X","u up?"],
-  ["F","Dale! Go to sleep!"],
-  ["N","The real part: most phones max out around a thousand nits. The surface of the Sun is about one point six billion.",{"fact":1}]
+ "id": "04-bright",
+ "events": [
+  [
+   "N",
+   "What if your phone got three times brighter every time you tapped it?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Midnight. Dale just wants to check one text."
+  ],
+  [
+   "A",
+   1,
+   {
+    "dur": 0.45,
+    "off": 0.15
+   }
+  ],
+  [
+   "N",
+   "One nit. Night mode.",
+   {
+    "rung": 0
+   }
+  ],
+  [
+   "A",
+   7,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   9,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   11,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   13,
+   {
+    "dur": 0.45,
+    "off": 0.15
+   }
+  ],
+  [
+   "N",
+   "Half a million. The neighbors think it's morning. The birds start singing.",
+   {
+    "rung": 4
+   }
+  ],
+  [
+   "A",
+   17,
+   {
+    "dur": 0.45,
+    "off": 0.15
+   }
+  ],
+  [
+   "N",
+   "Forty three million. You can see his phone from space.",
+   {
+    "rung": 5
+   }
+  ],
+  [
+   "N",
+   "Then it got worse.",
+   {
+    "worse": 1
+   }
+  ],
+  [
+   "A",
+   21,
+   {
+    "dur": 0.6,
+    "off": 0.2
+   }
+  ],
+  [
+   "N",
+   "Three and a half billion nits. Twice as bright as the surface of the Sun.",
+   {
+    "rung": 6
+   }
+  ],
+  [
+   "N",
+   "The text said:"
+  ],
+  [
+   "X",
+   "u up?"
+  ],
+  [
+   "F",
+   "Dale! Go to sleep!"
+  ],
+  [
+   "N",
+   "The real part: most phones max out around a thousand nits. The surface of the Sun is about one point six billion.",
+   {
+    "fact": 1
+   }
+  ],
+  [
+   "N",
+   "So never ask:",
+   {
+    "loop": 1,
+    "gap": 0.25
+   }
+  ]
  ],
- "voices":{"X":["am_puck",1.0,"en-us"],"F":["af_bella",1.1,"en-us"]},
- "music":{"style":"mystery","transpose":-2},
- "sfx":[
-  {"type":"pop","at":"A1","gain":0.5},{"type":"pop","at":"A7","gain":0.6},{"type":"pop","at":"A9","gain":0.7},
-  {"type":"hum","at":"A9","dur":3,"f":220,"gain":0.15},
-  {"type":"pop","at":"A11","gain":0.8},{"type":"hum","at":"A11","dur":4,"f":165,"gain":0.25},
-  {"type":"pop","at":"A13","gain":0.9},
-  {"type":"pop","at":"A17","gain":0.9},{"type":"hum","at":"A17","dur":4,"f":110,"gain":0.35},
-  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
-  {"type":"pop","at":"A21","gain":1.0},{"type":"boom","at":"A21","dur":3.5,"f0":60,"f1":20,"dec":1.1,"gain":1.1},{"type":"roar","at":"A21","dur":4,"gain":0.5},
-  {"type":"ding","at":"6.0","gain":0.0},
-  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
- ]
+ "voices": {
+  "X": [
+   "am_puck",
+   1.0,
+   "en-us"
+  ],
+  "F": [
+   "af_bella",
+   1.1,
+   "en-us"
+  ],
+  "N": [
+   "am_michael",
+   1.2,
+   "en-us"
+  ]
+ },
+ "music": {
+  "style": "mystery",
+  "transpose": -2
+ },
+ "sfx": [
+  {
+   "type": "pop",
+   "at": "A1",
+   "gain": 0.5
+  },
+  {
+   "type": "pop",
+   "at": "A7",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "A9",
+   "gain": 0.7
+  },
+  {
+   "type": "hum",
+   "at": "A9",
+   "dur": 3,
+   "f": 220,
+   "gain": 0.15
+  },
+  {
+   "type": "pop",
+   "at": "A11",
+   "gain": 0.8
+  },
+  {
+   "type": "hum",
+   "at": "A11",
+   "dur": 4,
+   "f": 165,
+   "gain": 0.25
+  },
+  {
+   "type": "pop",
+   "at": "A13",
+   "gain": 0.9
+  },
+  {
+   "type": "pop",
+   "at": "A17",
+   "gain": 0.9
+  },
+  {
+   "type": "hum",
+   "at": "A17",
+   "dur": 4,
+   "f": 110,
+   "gain": 0.35
+  },
+  {
+   "type": "riser",
+   "at": "worse",
+   "off": -0.1,
+   "dur": 1.7,
+   "gain": 0.7
+  },
+  {
+   "type": "pop",
+   "at": "A21",
+   "gain": 1.0
+  },
+  {
+   "type": "boom",
+   "at": "A21",
+   "dur": 3.5,
+   "f0": 60,
+   "f1": 20,
+   "dec": 1.1,
+   "gain": 1.1
+  },
+  {
+   "type": "roar",
+   "at": "A21",
+   "dur": 4,
+   "gain": 0.5
+  },
+  {
+   "type": "ding",
+   "at": "fact",
+   "off": -0.2,
+   "gain": 0.3
+  }
+ ],
+ "cold": 0.9,
+ "tail": 0.12
 }
