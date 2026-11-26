@@ -1,0 +1,39 @@
+{
+ "id":"13-heavy",
+ "events":[
+  ["N","What if every time you sat down, you got three times heavier?",{"title":1}],
+  ["N","Friday night. Dale's at the movies. He keeps getting up for snacks."],
+  ["X","Shh. It's starting."],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","Eighty kilograms. Normal.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Seven hundred twenty. A whole cow. The seat creaks.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Six and a half tons. An elephant. The seat folds.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Fifty eight tons. A tank. He's in the basement now.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Five hundred tons. A loaded jumbo jet. The theater is a hole.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Forty seven hundred tons. Half the Eiffel Tower.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",45,{"dur":0.7,"off":0.35}],
+  ["N","Seventy eight quintillion tons. Heavier than the Moon.",{"rung":6}],
+  ["N","The popcorn is now orbiting him."],
+  ["I","Could someone pass the napkins?"],
+  ["N","The real part: you actually weigh about half a percent less at the equator than at the poles. Earth's spin flings you outward a little.",{"fact":1}]
+ ],
+ "voices":{"X":["af_sky",1.0,"en-us"]},
+ "music":{"style":"sneaky","transpose":1},
+ "sfx":[
+  {"type":"thud","at":"A1","off":0.1,"gain":0.3},
+  {"type":"thud","at":"A3","off":0.1,"gain":0.5},{"type":"crack","at":"A3","off":0.3,"gain":0.3},
+  {"type":"crack","at":"A5","off":0.1,"gain":0.8},{"type":"thud","at":"A5","off":0.2,"gain":0.8},
+  {"type":"crack","at":"A7","off":0.0,"gain":1.0},{"type":"boom","at":"A7","off":0.4,"dur":1.4,"gain":0.6},
+  {"type":"boom","at":"A9","dur":2.2,"gain":0.9},{"type":"crack","at":"A9","off":0.05,"gain":1.0},
+  {"type":"boom","at":"A11","dur":3,"f0":50,"f1":20,"gain":1.0},{"type":"roar","at":"A11","dur":2.5,"gain":0.5},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"hum","at":"A45","dur":4,"f":40,"gain":0.6},{"type":"whoosh","at":"A45","off":0.6,"dur":2,"gain":0.6},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
