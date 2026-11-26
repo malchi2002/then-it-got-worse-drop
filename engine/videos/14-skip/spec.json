@@ -1,0 +1,40 @@
+{
+ "id":"14-skip",
+ "events":[
+  ["N","What if every time a stone skipped, it went three times farther than before?",{"title":1}],
+  ["N","Sunset at the lake. Dale has never gotten more than one skip."],
+  ["X","Flick the wrist, Dale."],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","One meter. A normal skip.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Nine meters. Not bad.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Eighty one meters. Across the whole lake.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Seven hundred meters. Off a parking lot. Off a car.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Six and a half kilometers. Bouncing down the highway.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Fifty nine kilometers. It's skipping off clouds now.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",17,{"dur":0.7,"off":0.35}],
+  ["N","Forty three thousand kilometers. All the way around the Earth.",{"rung":6}],
+  ["N","Dale is still standing there."],
+  ["I","Ow. Okay, that counts."],
+  ["N","The real part: the world record is eighty eight skips in one throw, set by Kurt Steiner in twenty thirteen.",{"fact":1}]
+ ],
+ "voices":{"X":["am_puck",1.05,"en-us"]},
+ "music":{"style":"bouncy","transpose":-1},
+ "sfx":[
+  {"type":"splash","at":"A1","gain":0.4},
+  {"type":"splash","at":"A3","gain":0.5},{"type":"splash","at":"A3","off":-0.5,"gain":0.3},
+  {"type":"splash","at":"A5","gain":0.6},{"type":"whoosh","at":"A5","off":-0.6,"dur":0.6,"gain":0.4},
+  {"type":"crack","at":"A7","gain":0.7},{"type":"glass","at":"A7","off":0.05,"dur":1.2,"gain":0.4},
+  {"type":"crack","at":"A9","gain":0.8},{"type":"whoosh","at":"A9","off":0.1,"dur":0.8,"gain":0.6},
+  {"type":"pop","at":"A11","gain":0.6},{"type":"wind","at":"A11","dur":2.5,"gain":0.4},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"whoosh","at":"A17","dur":3,"gain":0.8},{"type":"boom","at":"A17","off":0.1,"dur":2,"gain":0.5},
+  {"type":"whoosh","at":"37.6","dur":0.5,"gain":0.5},{"type":"thud","at":"38.05","gain":1.0},{"type":"ding","at":"38.1","gain":0.4},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
