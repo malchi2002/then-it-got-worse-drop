@@ -1,7 +1,7 @@
 import numpy as np, soundfile as sf, json, sys, os
 from scipy.signal import butter, sosfilt, resample
 d=sys.argv[1]; spec=json.load(open(f'{d}/spec.json'))
-SR=48000; tl=json.load(open(f'{d}/timeline.json')); D=tl['dur']+0.6; N=int(D*SR)
+SR=48000; tl=json.load(open(f'{d}/timeline.json')); D=tl['dur']+(0.6 if not tl.get('cold') else 0.15); N=int(D*SR)
 voice=np.zeros(N); sfx=np.zeros(N); r=np.random.default_rng(1)
 def load(p):
     x,s=sf.read(p); x=x if x.ndim==1 else x.mean(1); return resample(x,int(len(x)*SR/s))
@@ -43,6 +43,7 @@ def at(ref):
     if ref.startswith('A'): return acts[int(ref[1:])]['blast']
     if ref=='worse': return [l for l in lines if l.get('worse')][0]['t']
     if ref=='fact': return [l for l in lines if l.get('fact')][0]['t']
+    if ref.startswith('L:'): return [l for l in lines if l['text'].startswith(ref[2:])][0]['t']
     return float(ref)
 # default per-act sound: action clip (if any) + whoosh + boom scaled by rank
 order=sorted(acts); rank={n:i for i,n in enumerate(order)}

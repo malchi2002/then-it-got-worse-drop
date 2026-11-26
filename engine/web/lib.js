@@ -299,17 +299,23 @@ export function makeOverlay(CFG) {
       ctx.font = "600 22px Inter"; ctx.fillStyle = 'rgba(255,255,255,0.8)'; for (const [v, lab] of (CFG.barMarks || [])) { const fx = clamp((Math.log10(v) - lmin) / (Math.log10(CFG.barMax) - lmin)); ctx.fillText(lab, bx + bw * fx - 30, by + 46); }
     }
   }
+  function fitFont(lines, maxW, start) { let fs = start; for (;;) { ctx.font = `${fs}px 'Archivo Black'`; if (Math.max(...lines.map(x => ctx.measureText(x).width)) <= maxW || fs < 40) return fs; fs -= 4; } }
+  function bigTitle(y0, a) {
+    ctx.globalAlpha = a; const l1 = CFG.titleL1.toUpperCase(), hi = CFG.titleHi.toUpperCase(), l2 = CFG.titleL2.toUpperCase();
+    const g = ctx.createLinearGradient(0, 0, 0, y0 + 520); g.addColorStop(0, 'rgba(0,0,0,0.55)'); g.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, y0 + 520);
+    // wrap L1 into max 2 lines
+    const words = l1.split(' '); let rows = [l1]; if (l1.length > 18) { let best = 1, bd = 1e9; for (let i = 1; i < words.length; i++) { const a1 = words.slice(0, i).join(' '), b1 = words.slice(i).join(' '); const d = Math.abs(a1.length - b1.length); if (d < bd) { bd = d; best = i; } } rows = [words.slice(0, best).join(' '), words.slice(best).join(' ')]; }
+    let last = hi + l2; let tail = null; if (last.length > 26 && l2.trim().length > 3) { tail = l2.trim(); last = hi; }
+    const fs = fitFont(tail ? [...rows, last, tail] : [...rows, last], W - 110, 112); ctx.lineJoin = 'round'; ctx.textAlign = 'center'; let y = y0;
+    for (const r of rows) { strokeText(r, W / 2, y, `${fs}px 'Archivo Black'`, '#ffffff', '#000', fs * 0.16); y += fs * 1.08; }
+    if (tail) { strokeText(hi.trim(), W / 2, y, `${fs}px 'Archivo Black'`, '#ffcf4a', '#000', fs * 0.16); y += fs * 1.08; strokeText(tail, W / 2, y, `${fs}px 'Archivo Black'`, '#ffffff', '#000', fs * 0.16); ctx.globalAlpha = 1; return; }
+    ctx.font = `${fs}px 'Archivo Black'`; const wa = ctx.measureText(hi).width, wb = ctx.measureText(l2).width; const sx = W / 2 - (wa + wb) / 2; ctx.textAlign = 'left';
+    strokeText(hi, sx, y, `${fs}px 'Archivo Black'`, '#ffcf4a', '#000', fs * 0.16); strokeText(l2, sx + wa, y, `${fs}px 'Archivo Black'`, '#ffffff', '#000', fs * 0.16);
+    ctx.textAlign = 'center'; ctx.globalAlpha = 1;
+  }
   function title(t) {
-    const end = CFG.lines[1].t; if (t >= end) return;
-    const a = clamp(t / 0.25) * clamp((end - t) / 0.25); ctx.globalAlpha = a;
-    const g = ctx.createLinearGradient(0, 0, 0, 700); g.addColorStop(0, 'rgba(0,0,0,0.45)'); g.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, 700);
-    ctx.lineWidth = 10; ctx.strokeStyle = 'rgba(0,0,0,0.5)'; ctx.lineJoin = 'round';
-    const fsz = CFG.titleSize || 84;
-    ctx.font = `${fsz}px 'Instrument Serif'`; ctx.textAlign = 'center'; ctx.strokeText(CFG.titleL1, W / 2, 300); ctx.fillStyle = '#fff'; ctx.fillText(CFG.titleL1, W / 2, 300);
-    ctx.font = `italic ${fsz}px 'Instrument Serif'`; const wa = ctx.measureText(CFG.titleHi).width; ctx.font = `${fsz}px 'Instrument Serif'`; const wb = ctx.measureText(CFG.titleL2).width; const sx = W / 2 - (wa + wb) / 2; ctx.textAlign = 'left';
-    ctx.font = `italic ${fsz}px 'Instrument Serif'`; ctx.strokeText(CFG.titleHi, sx, 300 + fsz * 1.13); ctx.fillStyle = '#ffcf4a'; ctx.fillText(CFG.titleHi, sx, 300 + fsz * 1.13);
-    ctx.font = `${fsz}px 'Instrument Serif'`; ctx.strokeText(CFG.titleL2, sx + wa, 300 + fsz * 1.13); ctx.fillStyle = '#fff'; ctx.fillText(CFG.titleL2, sx + wa, 300 + fsz * 1.13);
-    ctx.globalAlpha = 1;
+    const end = CFG.lines[1].t; const c0 = (window.TL && TL.cold) || 0; if (t >= end || t < c0) return;
+    const a = clamp((t - c0) / 0.12) * clamp((end - t) / 0.25); bigTitle(300, a);
   }
   function worseCard(lt) {
     const a = clamp(lt / 0.15); ctx.globalAlpha = a; ctx.textAlign = 'center';
@@ -325,7 +331,7 @@ export function makeOverlay(CFG) {
     ctx.save(); ctx.translate(70, 300); ctx.scale(fs, fs); strokeText(F.big, 0, 0, "150px 'Archivo Black'", '#ffffff', 'rgba(0,0,0,0.5)', 10); strokeText(' ' + F.unit, nw, 0, "56px 'Archivo Black'", '#fff', 'rgba(0,0,0,0.5)', 8); ctx.restore();
     ctx.font = "600 32px Inter"; ctx.fillStyle = '#fff'; ctx.fillText(F.sub, 70, 362); ctx.globalAlpha = 1;
   }
-  return function overlay(t, shot, lt) {
+  const ov = function overlay(t, shot, lt) {
     title(t); hud(t, shot);
     if (shot === 'worse') worseCard(lt);
     if (shot === 'fact' && CFG.fact) factHud(lt);
@@ -334,6 +340,8 @@ export function makeOverlay(CFG) {
     for (const b of (CFG.flashSmall || [])) { const d = t - b; if (d >= 0 && d < 0.1) { ctx.fillStyle = `rgba(255,255,255,${0.45 * (1 - d / 0.1)})`; ctx.fillRect(0, 0, W, H); } }
     const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
   };
+  ov.cold = (t) => { const c0 = TL.cold; const k = t / c0; ctx.fillStyle = `rgba(255,255,255,${0.5 * clamp(1 - t / 0.12)})`; ctx.fillRect(0, 0, W, H); bigTitle(330, 1); const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H); };
+  window.__coldOv = ov.cold; return ov;
 }
 // timeline helpers
 export function tlHelpers(tl) {
@@ -343,7 +351,9 @@ export function tlHelpers(tl) {
 }
 export function makeFrame(shots, renderShot, overlay) {
   window.frame = (t) => {
-    const sh = shots(); const cur = sh.find(s => t >= s[1] && t < s[2]) || sh[sh.length - 1];
+    const sh = shots();
+    const coldFn = overlay.cold || window.__coldOv; if (window.TL && TL.cold && t < TL.cold && coldFn) { const tp = TL.coldAt + t * 0.6; const c = sh.find(s => tp >= s[1] && tp < s[2]) || sh[sh.length - 1]; const sc0 = renderShot(c[0], tp - c[1], c[2] - c[1], tp); R.render(sc0, cam); ctx.drawImage(glc, 0, 0); coldFn(t); return out.toDataURL('image/jpeg', 0.9); }
+    const cur = sh.find(s => t >= s[1] && t < s[2]) || sh[sh.length - 1];
     const lt = t - cur[1], dur = cur[2] - cur[1];
     const sc = renderShot(cur[0], lt, dur, t);
     R.render(sc, cam); ctx.drawImage(glc, 0, 0); overlay(t, cur[0], lt);

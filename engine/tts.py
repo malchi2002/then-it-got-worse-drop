@@ -9,8 +9,10 @@ def tts(text,who):
     v,sp,lang=VO[who]; s,sr=K.create(text,voice=v,speed=sp,lang=lang); s=np.asarray(s,np.float32)
     a=np.abs(s); idx=np.where(a>0.02*a.max())[0]; return s[max(0,idx[0]-240):idx[-1]+480]
 out=[]; tl=[]; t=0.0; say=[]
+COLD=spec.get('cold',0)
 def add(seg,gap):
     global t; out.append(np.zeros(int(gap*SR),np.float32)); t+=gap; st=t; out.append(seg); t+=len(seg)/SR; return st
+if COLD: out.append(np.zeros(int(COLD*SR),np.float32)); t+=COLD
 for e in spec['events']:
     if e[0]=='A':
         n=e[1]; meta=e[2] if len(e)>2 else {}; dur=meta.get('dur',0.6); off=meta.get('off',0.3)
@@ -23,13 +25,15 @@ for e in spec['events']:
     words=text.split(); w=np.array([len(re.sub(r'\W','',x))+2 for x in words],float); dur=en-st; cs=np.concatenate([[0],np.cumsum(w)])/w.sum()*dur
     tl.append({'type':'line','who':who,'text':text,'t':st,'end':en,**meta,'words':[{'w':words[i],'t':round(st+cs[i],3),'e':round(st+cs[i+1],3)} for i in range(len(words))]})
     if meta.get('worse'): add(np.zeros(int(0.45*SR),np.float32),0)
-add(np.zeros(int(0.6*SR),np.float32),0)
+add(np.zeros(int(spec.get('tail',0.6)*SR),np.float32),0)
 sf.write(f'{d}/voice.wav',np.concatenate(out),SR)
 # action voice clips (e.g. "hic!") rendered separately for SFX track
 clips={}
 for x in tl:
     if x['type']=='act' and x.get('say'):
         c=tts(x['say'],x.get('sayWho','X')); sf.write(f"{d}/act_{x['n']}.wav",c,SR)
-json.dump({'dur':t,'tl':tl},open(f'{d}/timeline.json','w'),indent=1)
+acts=[x for x in tl if x['type']=='act']
+coldAt=(acts[-1]['blast']+spec.get('coldOff',1.0)) if acts else 0
+json.dump({'dur':t,'tl':tl,'cold':COLD,'coldAt':coldAt},open(f'{d}/timeline.json','w'),indent=1)
 print('total',round(t,2))
 for x in tl: print(round(x['t'],2),x['type'],x.get('text',x.get('n')))
