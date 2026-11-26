@@ -1,44 +1,261 @@
 {
- "id":"08-bubble",
- "events":[
-  ["N","What if every bubblegum bubble you blew was three times bigger than the last?",{"title":1}],
-  ["N","Sunday at the park. Dale has been chewing for an hour."],
-  ["X","Bet you can't blow a big one."],
-  ["A",1,{"dur":0.7,"off":0.45}],
-  ["N","Twenty centimeters. A normal bubble.",{"rung":0}],
-  ["A",2,{"dur":0.7,"off":0.45}],
-  ["N","Sixty centimeters. Bigger than the world record.",{"rung":1}],
-  ["A",3,{"dur":0.7,"off":0.45}],
-  ["N","One point eight meters. The ducks are concerned.",{"rung":2}],
-  ["A",4,{"dur":0.7,"off":0.45}],
-  ["N","Five meters. His feet leave the ground.",{"rung":3}],
-  ["A",5,{"dur":0.7,"off":0.45}],
-  ["N","Sixteen meters. The size of a hot air balloon.",{"rung":4}],
-  ["A",7,{"dur":0.7,"off":0.45}],
-  ["N","One hundred forty six meters. He is above the city. Still chewing.",{"rung":5}],
-  ["A",11,{"dur":0.7,"off":0.45}],
-  ["N","Twelve kilometers. Planes are flying under him.",{"rung":6}],
-  ["N","Then it got worse.",{"worse":1}],
-  ["A",17,{"dur":0.8,"off":0.5}],
-  ["N","Twenty five thousand kilometers. Twice as wide as the Earth.",{"rung":7}],
-  ["N","Then it popped."],
-  ["P",0.4],
-  ["N","Earth is pink now."],
-  ["N","The real part: the biggest bubblegum bubble ever recorded without hands was about fifty one centimeters across.",{"fact":1}]
+ "id": "08-bubble",
+ "events": [
+  [
+   "N",
+   "What if every bubblegum bubble you blew was three times bigger than the last?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Sunday at the park. Dale has been chewing for an hour."
+  ],
+  [
+   "X",
+   "Bet you can't blow a big one."
+  ],
+  [
+   "A",
+   1,
+   {
+    "dur": 0.7,
+    "off": 0.45
+   }
+  ],
+  [
+   "N",
+   "Twenty centimeters. A normal bubble.",
+   {
+    "rung": 0
+   }
+  ],
+  [
+   "A",
+   2,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   3,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   4,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   5,
+   {
+    "dur": 0.6,
+    "off": 0.25
+   }
+  ],
+  [
+   "A",
+   7,
+   {
+    "dur": 0.7,
+    "off": 0.45
+   }
+  ],
+  [
+   "N",
+   "One hundred forty six meters. He is above the city. Still chewing.",
+   {
+    "rung": 5
+   }
+  ],
+  [
+   "A",
+   11,
+   {
+    "dur": 0.7,
+    "off": 0.45
+   }
+  ],
+  [
+   "N",
+   "Twelve kilometers. Planes are flying under him.",
+   {
+    "rung": 6
+   }
+  ],
+  [
+   "N",
+   "Then it got worse.",
+   {
+    "worse": 1
+   }
+  ],
+  [
+   "A",
+   17,
+   {
+    "dur": 0.8,
+    "off": 0.5
+   }
+  ],
+  [
+   "N",
+   "Twenty five thousand kilometers. Twice as wide as the Earth.",
+   {
+    "rung": 7
+   }
+  ],
+  [
+   "N",
+   "Then it popped."
+  ],
+  [
+   "P",
+   0.4
+  ],
+  [
+   "N",
+   "Earth is pink now."
+  ],
+  [
+   "N",
+   "The real part: the biggest bubblegum bubble ever recorded without hands was about fifty one centimeters across.",
+   {
+    "fact": 1
+   }
+  ],
+  [
+   "N",
+   "So never ask:",
+   {
+    "loop": 1,
+    "gap": 0.25
+   }
+  ]
  ],
- "voices":{"X":["af_sky",1.15,"en-us"]},
- "music":{"style":"bouncy","transpose":2},
- "sfx":[
-  {"type":"hum","at":"A1","off":-0.4,"dur":0.6,"f":300,"gain":0.1},
-  {"type":"hum","at":"A2","off":-0.4,"dur":0.6,"f":250,"gain":0.12},
-  {"type":"hum","at":"A3","off":-0.4,"dur":0.8,"f":200,"gain":0.15},
-  {"type":"wind","at":"A4","dur":3,"gain":0.3},
-  {"type":"wind","at":"A5","dur":3,"gain":0.4},
-  {"type":"wind","at":"A7","dur":4,"gain":0.5},
-  {"type":"hum","at":"A11","off":0.4,"dur":3,"f":95,"gain":0.3},
-  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
-  {"type":"boom","at":"A17","dur":3,"f0":60,"f1":20,"dec":1.0,"gain":0.8},
-  {"type":"pop","at":"A17","off":4.8,"gain":1.0},{"type":"boom","at":"A17","off":4.8,"dur":2.5,"f0":200,"f1":40,"dec":0.6,"gain":0.9},{"type":"splash","at":"A17","off":4.85,"dur":2,"gain":0.8},
-  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
- ]
+ "voices": {
+  "X": [
+   "af_sky",
+   1.15,
+   "en-us"
+  ],
+  "N": [
+   "am_michael",
+   1.2,
+   "en-us"
+  ]
+ },
+ "music": {
+  "style": "bouncy",
+  "transpose": 2
+ },
+ "sfx": [
+  {
+   "type": "hum",
+   "at": "A1",
+   "off": -0.4,
+   "dur": 0.6,
+   "f": 300,
+   "gain": 0.1
+  },
+  {
+   "type": "hum",
+   "at": "A2",
+   "off": -0.4,
+   "dur": 0.6,
+   "f": 250,
+   "gain": 0.12
+  },
+  {
+   "type": "hum",
+   "at": "A3",
+   "off": -0.4,
+   "dur": 0.8,
+   "f": 200,
+   "gain": 0.15
+  },
+  {
+   "type": "wind",
+   "at": "A4",
+   "dur": 3,
+   "gain": 0.3
+  },
+  {
+   "type": "wind",
+   "at": "A5",
+   "dur": 3,
+   "gain": 0.4
+  },
+  {
+   "type": "wind",
+   "at": "A7",
+   "dur": 4,
+   "gain": 0.5
+  },
+  {
+   "type": "hum",
+   "at": "A11",
+   "off": 0.4,
+   "dur": 3,
+   "f": 95,
+   "gain": 0.3
+  },
+  {
+   "type": "riser",
+   "at": "worse",
+   "off": -0.1,
+   "dur": 1.7,
+   "gain": 0.7
+  },
+  {
+   "type": "boom",
+   "at": "A17",
+   "dur": 3,
+   "f0": 60,
+   "f1": 20,
+   "dec": 1.0,
+   "gain": 0.8
+  },
+  {
+   "type": "pop",
+   "at": "A17",
+   "off": 4.8,
+   "gain": 1.0
+  },
+  {
+   "type": "boom",
+   "at": "A17",
+   "off": 4.8,
+   "dur": 2.5,
+   "f0": 200,
+   "f1": 40,
+   "dec": 0.6,
+   "gain": 0.9
+  },
+  {
+   "type": "splash",
+   "at": "A17",
+   "off": 4.85,
+   "dur": 2,
+   "gain": 0.8
+  },
+  {
+   "type": "ding",
+   "at": "fact",
+   "off": -0.2,
+   "gain": 0.3
+  }
+ ],
+ "cold": 0.9,
+ "tail": 0.12
 }
