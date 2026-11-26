@@ -1,0 +1,39 @@
+{
+ "id":"22-cart",
+ "events":[
+  ["N","What if every push made your shopping cart go three times faster?",{"title":1}],
+  ["N","Saturday. Dale only needs milk."],
+  ["X","No running in the store, sir."],
+  ["A",1,{"dur":0.6,"off":0.3}],
+  ["N","Five kilometers per hour. Walking speed.",{"rung":0}],
+  ["A",3,{"dur":0.6,"off":0.3}],
+  ["N","Forty five. The cereal aisle is a blur.",{"rung":1}],
+  ["A",5,{"dur":0.6,"off":0.3}],
+  ["N","Four hundred. Faster than a race car. Through the front doors.",{"rung":2}],
+  ["A",7,{"dur":0.6,"off":0.3}],
+  ["N","Thirty six hundred. Three times the speed of sound.",{"rung":3}],
+  ["A",9,{"dur":0.6,"off":0.3}],
+  ["N","Thirty two thousand. Faster than the space station.",{"rung":4}],
+  ["A",11,{"dur":0.6,"off":0.3}],
+  ["N","Three hundred thousand. Earth to the Moon in eighty minutes.",{"rung":5}],
+  ["N","Then it got worse.",{"worse":1}],
+  ["A",18,{"dur":0.7,"off":0.35}],
+  ["N","Six hundred forty five million kilometers per hour. More than half the speed of light.",{"rung":6}],
+  ["N","Dale forgot the milk."],
+  ["I","I'll come back for it."],
+  ["N","The real part: the shopping cart was invented in nineteen thirty seven by a grocery store owner in Oklahoma.",{"fact":1}]
+ ],
+ "voices":{"X":["af_bella",1.0,"en-us"]},
+ "music":{"style":"march","transpose":2},
+ "sfx":[
+  {"type":"pop","at":"A1","gain":0.3},
+  {"type":"whoosh","at":"A3","dur":0.8,"gain":0.5},
+  {"type":"glass","at":"A5","off":0.6,"dur":1.2,"gain":0.8},{"type":"whoosh","at":"A5","dur":0.9,"gain":0.6},
+  {"type":"boom","at":"A7","off":0.2,"dur":1.6,"gain":0.9},{"type":"whoosh","at":"A7","dur":1,"gain":0.6},
+  {"type":"roar","at":"A9","dur":2,"gain":0.6},
+  {"type":"whoosh","at":"A11","dur":2,"gain":0.7},
+  {"type":"riser","at":"worse","off":-0.1,"dur":1.7,"gain":0.7},
+  {"type":"boom","at":"A18","dur":4,"f0":60,"f1":20,"dec":1.2,"gain":1.0},{"type":"whoosh","at":"A18","off":0.2,"dur":2.5,"gain":0.7},
+  {"type":"ding","at":"fact","off":-0.2,"gain":0.3}
+ ]
+}
