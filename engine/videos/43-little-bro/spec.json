@@ -1,0 +1,109 @@
+{
+ "id": "43-little-bro",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your little brother copied everything you did?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. You put on a red hoodie. So does he.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day four. You say hi to your crush. He says hi to your crush.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day nine. You get in trouble. He gets in trouble.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day twenty. You do your homework. He does your homework.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "He gets a better grade.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. You stop doing anything. He keeps going.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "Now you're copying him.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Tag the sibling who copies everything you do.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.33775",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "5.850499999999999",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "9.780333333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "12.953416666666666",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "17.578875",
+   "gain": 0.6
+  }
+ ]
+}
