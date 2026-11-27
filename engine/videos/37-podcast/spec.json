@@ -1,0 +1,140 @@
+{
+ "id": "37-podcast",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ],
+  "X": [
+   "el",
+   "N2lVS1w4EtoT3dr4eOWO",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your bro started a podcast?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. He buys two microphones.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "X",
+   "Welcome back to the pod.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day four. Episode three. Three listeners.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "All of them are his mom.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day ten. He starts every sentence with: so I was doing my research.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day twenty. He records breakfast.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "X",
+   "This cereal? Sponsored.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. One million listeners.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "Turns out they only listen for you.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to your bro who has a podcast idea.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "1.902",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "5.913041666666666",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "7.113041666666666",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "9.981208333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "14.801416666666666",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "19.030124999999998",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "19.830125",
+   "gain": 1.5
+  }
+ ]
+}
