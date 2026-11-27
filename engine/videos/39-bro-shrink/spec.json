@@ -1,0 +1,153 @@
+{
+ "id": "39-bro-shrink",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ],
+  "X": [
+   "el",
+   "N2lVS1w4EtoT3dr4eOWO",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if every time you said bro, you shrank one inch?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. You see your bro.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "X",
+   "Bro!",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day two.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "X",
+   "Bro. Bro. Bro, look. Bro.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day seven. You're the size of a toddler. You still can't stop.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day fifteen. You live in his hoodie pocket.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "X",
+   "Bro.",
+   {
+    "beat": 4,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Day thirty. Your bro looks at you and says it.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "Bro.",
+   {
+    "beat": 5,
+    "gap": 0.4
+   }
+  ],
+  [
+   "N",
+   "Now he's shrinking too.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "Tag the friend who says bro way too much.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.463375",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "4.611375000000001",
+   "gain": 1.6
+  },
+  {
+   "type": "whoosh",
+   "at": "4.710166666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "6.459375",
+   "gain": 1.6
+  },
+  {
+   "type": "whoosh",
+   "at": "7.600249999999999",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "10.848291666666666",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "13.966666666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "17.895666666666664",
+   "gain": 1.6
+  }
+ ]
+}
