@@ -257,5 +257,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "His bubblegum bubble swallowed the Earth.",
+  "rows": [
+   "BUBBLE ATE",
+   "THE EARTH"
+  ]
+ },
+ "coldOff": 2.5
 }
