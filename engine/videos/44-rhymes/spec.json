@@ -1,0 +1,130 @@
+{
+ "id": "44-rhymes",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ],
+  "X": [
+   "el",
+   "IKne3meq5aSn9XLyUdCD",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your bro could only talk in rhymes?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. Breakfast.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "X",
+   "Pass the toast, I'm hungry the most.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day three. Pop quiz.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "X",
+   "I don't know the answer, but I'm a great dancer.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day nine. He meets your crush.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "X",
+   "Hey girl, you're the best. Please ignore the rest.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day twenty. He's getting good. Like, scary good.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. You try one rhyme.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "Now you can't stop either.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to your bro who thinks he's a rapper.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "1.7920833333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "5.036208333333334",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "8.747291666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "13.231708333333334",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "16.082291666666666",
+   "gain": 0.6
+  }
+ ]
+}
