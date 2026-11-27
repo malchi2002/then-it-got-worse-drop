@@ -343,10 +343,10 @@ export function makeOverlay(CFG) {
   function hookText(t) {
     const Hk = TL.hook; const rows = Hk.rows; const span = Hk.end - Hk.t; ctx.fillStyle = 'rgba(0,0,0,0.15)'; ctx.fillRect(0, 0, W, H);
     const fs = fitFont(rows, W - 70, 200); ctx.lineJoin = 'round'; ctx.textAlign = 'center';
-    rows.forEach((r, i) => { const ap = i === 0 ? 0 : Hk.t + span * 0.45; const lt = t - ap; if (lt < 0) return; const pop = 1 + 0.18 * Math.max(0, 1 - lt / 0.12);
+    rows.forEach((r, i) => { const ap = window.__cover ? -9 : (i === 0 ? 0 : Hk.t + span * 0.45); const lt = t - ap; if (lt < 0) return; const pop = 1 + 0.18 * Math.max(0, 1 - lt / 0.12);
       ctx.save(); ctx.translate(W / 2, 640 - (rows.length - 1) * fs * 0.55 + i * fs * 1.1); ctx.scale(pop, pop); strokeText(r, 0, 0, `${fs}px 'Archivo Black'`, i === rows.length - 1 ? '#ffcf4a' : '#ffffff', '#000', fs * 0.17); ctx.restore(); });
   }
-  ov.cold = (t) => { if (TL.hook) { const d = t; ctx.fillStyle = `rgba(255,255,255,${0.6 * clamp(1 - d / 0.1)})`; ctx.fillRect(0, 0, W, H); hookText(t); const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H); return; } const c0 = TL.cold; const k = t / c0; ctx.fillStyle = `rgba(255,255,255,${0.5 * clamp(1 - t / 0.12)})`; ctx.fillRect(0, 0, W, H); bigTitle(330, 1); const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H); };
+  ov.cold = (t) => { if (TL.hook) { const d = window.__cover ? 9 : t; ctx.fillStyle = `rgba(255,255,255,${0.6 * clamp(1 - d / 0.1)})`; ctx.fillRect(0, 0, W, H); hookText(t); if (window.__cover) { ctx.font = "56px 'Archivo Black'"; const bw = ctx.measureText('WHAT IF?').width + 60; ctx.fillStyle = '#ffcf4a'; ctx.beginPath(); ctx.roundRect(W / 2 - bw / 2, 330, bw, 84, 16); ctx.fill(); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.fillText('WHAT IF?', W / 2, 392); } const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H); return; } const c0 = TL.cold; const k = t / c0; ctx.fillStyle = `rgba(255,255,255,${0.5 * clamp(1 - t / 0.12)})`; ctx.fillRect(0, 0, W, H); bigTitle(330, 1); const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H); };
   window.__coldOv = ov.cold; return ov;
 }
 // timeline helpers
@@ -358,7 +358,7 @@ export function tlHelpers(tl) {
 export function makeFrame(shots, renderShot, overlay) {
   window.frame = (t) => {
     const sh = shots();
-    const coldFn = overlay.cold || window.__coldOv; if (window.TL && TL.cold && t < TL.cold && coldFn) { const tp = TL.coldAt + t * 0.6; const c = sh.find(s => tp >= s[1] && tp < s[2]) || sh[sh.length - 1]; const sc0 = renderShot(c[0], tp - c[1], c[2] - c[1], tp); R.render(sc0, cam); ctx.drawImage(glc, 0, 0); coldFn(t); return out.toDataURL('image/jpeg', 0.9); }
+    const coldFn = overlay.cold || window.__coldOv; if (window.TL && TL.cold && t < TL.cold && coldFn) { const tp = TL.coldAt + (window.__cover ? 0.2 : t * 0.6); const c = sh.find(s => tp >= s[1] && tp < s[2]) || sh[sh.length - 1]; const sc0 = renderShot(c[0], tp - c[1], c[2] - c[1], tp); R.render(sc0, cam); ctx.drawImage(glc, 0, 0); coldFn(t); return out.toDataURL('image/jpeg', 0.9); }
     const cur = sh.find(s => t >= s[1] && t < s[2]) || sh[sh.length - 1];
     const lt = t - cur[1], dur = cur[2] - cur[1];
     const sc = renderShot(cur[0], lt, dur, t);
