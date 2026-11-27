@@ -243,5 +243,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "His coffee is hotter than the Sun.",
+  "rows": [
+   "HOTTER THAN",
+   "THE SUN"
+  ]
+ },
+ "coldOff": 1.2
 }
