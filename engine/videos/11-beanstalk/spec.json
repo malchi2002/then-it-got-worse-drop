@@ -235,5 +235,13 @@
    1.2,
    "en-us"
   ]
- }
+ },
+ "hook": {
+  "say": "He watered a bean all the way to the Moon.",
+  "rows": [
+   "A BEAN TO",
+   "THE MOON"
+  ]
+ },
+ "coldOff": 0.3
 }
