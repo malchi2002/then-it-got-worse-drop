@@ -214,5 +214,13 @@
    1.2,
    "en-us"
   ]
- }
+ },
+ "hook": {
+  "say": "One bite, and now he breathes fire.",
+  "rows": [
+   "ONE BITE.",
+   "FIRE BREATH."
+  ]
+ },
+ "coldOff": -5
 }
