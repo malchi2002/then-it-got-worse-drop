@@ -1,0 +1,116 @@
+{
+ "id": "34-strong",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ],
+  "X": [
+   "el",
+   "N2lVS1w4EtoT3dr4eOWO",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your bro got one percent stronger every single day?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. He can't even open a pickle jar.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day one hundred. Two point seven times stronger. He bench presses you.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day two hundred. Seven times stronger. He carries a car out of a parking spot.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day three sixty five. Thirty seven times stronger.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "X",
+   "Bro, watch this.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Then mom asks him to open a pickle jar.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "He can't.",
+   {
+    "beat": 5,
+    "gap": 0.4
+   }
+  ],
+  [
+   "N",
+   "Send this to your bro who skips leg day.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.8253333333333335",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "5.1779166666666665",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "9.720458333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "13.515",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "17.849249999999998",
+   "gain": 0.6
+  }
+ ]
+}

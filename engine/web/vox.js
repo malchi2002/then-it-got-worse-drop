@@ -193,3 +193,94 @@ export function voxOverlay(CFG, TL) {
   return ov;
 }
 export { L };
+
+// ================= story driver =================
+const CASTS = {
+  YOU: { skin: '#8d5a3b', hoodie: '#d8342c', hair: 'afro', seed: 4 },
+  BRO: { skin: '#c99063', hoodie: '#2f64d8', hair: 'short', hairC: '#2a1b12', pants: '#1f2330', seed: 9 },
+  MOM: { skin: '#8d5a3b', hoodie: '#e86fa8', pants: '#3a3046', hair: 'bun', hairC: '#1d1410', seed: 22 },
+  BROMOM: { skin: '#c99063', hoodie: '#5fb3a8', pants: '#3a3046', hair: 'bun', hairC: '#3a2418', seed: 23 },
+  CRUSH: { skin: '#f0c29a', hoodie: '#8a5cf0', hair: 'bun', hairC: '#b5651d', seed: 33 },
+  TEACH: { skin: '#f0c29a', hoodie: '#3a3d44', pants: '#2b2b30', hair: 'short', hairC: '#7a7a7a', seed: 41 },
+  KID: { skin: '#8d5a3b', hoodie: '#f2b632', hair: 'short', hairC: '#1d1410', seed: 52, scale: 0.72 },
+  GUY: { skin: '#f0c29a', hoodie: '#3aa860', hair: 'cap', capC: '#d8342c', seed: 61 },
+};
+function buildProp(name) {
+  const g = new THREE.Group(); const B = (w, h, d, c, x = 0, y = 0, z = 0) => { const b = box(w, h, d, mat(c)); b.position.set(x, y, z); b.castShadow = b.receiveShadow = true; g.add(b); return b; };
+  if (name === 'car') { B(1.8, 0.6, 3.6, 0xd8342c, 0, 0.55, 0); B(1.6, 0.5, 1.8, 0xb82a24, 0, 1.1, -0.2); B(1.62, 0.36, 1.6, 0x9fd3ff, 0, 1.1, -0.2); for (const [x, z] of [[-0.9, 1.2], [0.9, 1.2], [-0.9, -1.2], [0.9, -1.2]]) B(0.25, 0.5, 0.5, 0x161616, x, 0.25, z); }
+  if (name === 'jar') { B(0.14, 0.18, 0.14, 0x9fd88a, 0, 0, 0); B(0.15, 0.05, 0.15, 0xd8b030, 0, 0.11, 0); }
+  if (name === 'dumbbell') { B(0.5, 0.05, 0.05, 0x888888); B(0.08, 0.2, 0.2, 0x222222, -0.25); B(0.08, 0.2, 0.2, 0x222222, 0.25); }
+  if (name === 'mic') { B(0.04, 0.3, 0.04, 0x222222, 0, 0.15, 0); B(0.09, 0.14, 0.09, 0x444444, 0, 0.35, 0); }
+  if (name === 'desk') { B(1.4, 0.06, 0.7, 0x8a5a32, 0, 0.75, 0); for (const [x, z] of [[-0.6, -0.28], [0.6, -0.28], [-0.6, 0.28], [0.6, 0.28]]) B(0.06, 0.75, 0.06, 0x5a3a22, x, 0.375, z); }
+  if (name === 'laptop') { B(0.4, 0.02, 0.28, 0x333333, 0, 0, 0); const s = B(0.4, 0.26, 0.02, 0x333333, 0, 0.13, -0.14); }
+  if (name === 'tv') { B(1.6, 0.9, 0.08, 0x111111, 0, 0, 0); const s = mesh(new THREE.PlaneGeometry(1.5, 0.8), new THREE.MeshStandardMaterial({ color: 0x6fa0ff, emissive: 0x6fa0ff, emissiveIntensity: 1 })); s.position.z = 0.045; g.add(s); }
+  if (name === 'board') { B(2.6, 1.2, 0.06, 0x1f4a32, 0, 0, 0); B(2.7, 0.08, 0.1, 0x8a5a32, 0, -0.62, 0.02); }
+  if (name === 'bag') { B(0.5, 0.6, 0.3, 0x3a3a46); }
+  if (name === 'cake') { B(0.5, 0.25, 0.5, 0xf2d0e0, 0, 0.125, 0); B(0.52, 0.04, 0.52, 0xe86fa8, 0, 0.26, 0); }
+  return g;
+}
+const SCN = {};
+function scene(name) {
+  if (SCN[name]) return SCN[name];
+  let S;
+  if (name === 'couch') S = voxRoom({ night: true }); else if (name === 'couchDay') S = voxRoom({ night: false, wall: 0xd9cbb0 });
+  else if (name === 'bedroom') S = voxBedroom({ night: true }); else if (name === 'bedroomDay') S = voxBedroom({ night: false, wall: 0xa9c7e8 });
+  else if (name === 'street') S = voxStreet({ seed: 5 }); else if (name === 'streetNight') { S = voxStreet({ seed: 7, sky: 0x1a2340 }); }
+  else if (name === 'kitchen') { S = voxRoom({ night: false, wall: 0xe7d6a8, couch: 0x6b4426 }); S.couch.visible = false; S.table.visible = false; const t = buildProp('desk'); t.scale.set(1.2, 1, 1.3); t.position.set(0, 0, -0.4); S.scene.add(t); }
+  else if (name === 'office' || name === 'class') { S = voxRoom({ night: false, wall: name === 'class' ? 0xe8e0c8 : 0xc9d3dc, couch: 0x555555 }); S.couch.visible = false; S.table.visible = false; if (name === 'class') { const b = buildProp('board'); b.position.set(0, 1.7, -2.45); S.scene.add(b); } }
+  else if (name === 'gym') { S = voxRoom({ night: false, wall: 0x9aa4b0, couch: 0x333333 }); S.couch.visible = false; S.table.visible = false; }
+  SCN[name] = S; return S;
+}
+const POOL = {};
+function guy(key, slot) { const k = key + '#' + slot; if (POOL[k]) return POOL[k]; const o = CASTS[key] || CASTS.GUY; const g = makeVox(o); g.scaleBase = o.scale || 1; g.phone = makePhone(); g.armR.tip.add(g.phone); g.phone.rotation.set(-0.5, Math.PI, 0); POOL[k] = g; return g; }
+export function story(TL, ST) {
+  const LINES = TL.tl.filter(x => x.type === 'line');
+  const beatLines = i => LINES.filter(l => l.beat === i);
+  const B = ST.beats.map((b, i) => ({ ...b, i, lines: beatLines(i) })).filter(b => b.lines.length);
+  B.forEach((b, k) => { b.t0 = b.lines[0].t - (k === 0 ? b.lines[0].t : 0.15); b.t1 = k < B.length - 1 ? B[k + 1].lines[0].t - 0.15 : 999; });
+  const at = (b, ref) => { if (typeof ref === 'number') return b.t0 + ref; const m = /^L(\d+)([+-][\d.]+)?$/.exec(ref || 'L0'); const l = b.lines[Math.min(+m[1], b.lines.length - 1)]; return l.t + (m[2] ? +m[2] : 0); };
+  const props = {};
+  const talkOf = (who, t) => LINES.some(l => l.who === who && t > l.t && t < l.end) ? Math.abs(Math.sin(t * 15)) * 0.5 : 0;
+  const shots = () => B.map(b => [String(b.i), b.t0, b.t1]);
+  function render(n, lt, d, t) {
+    const b = B.find(x => String(x.i) === n); const S = scene(b.scene); const sc = S.scene;
+    for (const k in POOL) POOL[k].root.visible = false; for (const k in props) props[k].visible = false;
+    const heads = [];
+    (b.cast || []).forEach((c, idx) => {
+      const g = guy(c.c, c.slot || idx); if (g.root.parent !== sc) sc.add(g.root); g.root.visible = true; g.reset(); g.phone.visible = false;
+      const sc0 = (c.scale ?? 1) * g.scaleBase; let s = sc0; if (c.grow) { const [ta, k1] = c.grow; const q = clamp((t - at(b, ta)) / 0.35); s = sc0 * (1 + (k1 - 1) * (easeOut(q) + Math.sin(q * Math.PI) * 0.15)); } g.root.scale.setScalar(s);
+      g.root.position.set(...(c.at || [0, 0, 0])); g.root.rotation.set(0, c.ry || 0, 0);
+      const p = c.pose || 'stand';
+      if (p === 'sit' || p === 'sitphone') g.sit(); if (p === 'phone' || p === 'sitphone') { g.phonePose(-1); g.phone.visible = true; g.head.rotation.x = 0.22; }
+      if (p === 'lie' || p === 'liephone') { g.root.rotation.set(-Math.PI / 2, 0, 0); if (p === 'liephone') { g.phonePose(-1); g.phone.visible = true; } }
+      if (p === 'walk') { g.walk(t); g.root.position.z += (c.walk || 0) * lt; }
+      if (p === 'lift' || p === 'cheer') { g.armL.sh.rotation.z = 2.8; g.armR.sh.rotation.z = -2.8; if (p === 'cheer') g.root.position.y += Math.abs(Math.sin(lt * 7)) * 0.15; }
+      if (p === 'point') { g.armR.sh.rotation.x = -1.5; g.armR.sh.rotation.z = 0.3; }
+      if (p === 'facepalm') { g.armR.sh.rotation.x = -2.3; g.armR.el.rotation.x = -1.6; g.head.rotation.x = 0.25; }
+      if (p === 'shrug') { g.armL.sh.rotation.z = 0.9; g.armR.sh.rotation.z = -0.9; g.armL.el.rotation.x = -1.2; g.armR.el.rotation.x = -1.2; }
+      if (p === 'type') { g.sit(); g.armL.sh.rotation.x = -1.0; g.armR.sh.rotation.x = -1.0; g.armL.el.rotation.x = -0.6 + Math.sin(t * 30) * 0.08; g.armR.el.rotation.x = -0.6 + Math.cos(t * 30) * 0.08; g.head.rotation.x = 0.2; }
+      if (p === 'shake') { g.root.position.x += Math.sin(t * 40) * 0.02; }
+      if (c.prop) { const key = c.prop + '#' + idx + '#' + b.i; if (!props[key]) { props[key] = buildProp(c.prop); } const pr = props[key]; if (pr.parent !== sc) sc.add(pr); pr.visible = true;
+        if (p === 'lift') { pr.position.set(g.root.position.x, g.root.position.y + (2.05 + (c.propY || 0)) * s, g.root.position.z); pr.rotation.set(0, 0, 0); pr.scale.setScalar(c.propScale || 1); }
+        else { pr.position.set(...(c.propAt || [g.root.position.x, 0, g.root.position.z + 0.6])); pr.scale.setScalar(c.propScale || 1); } }
+      let face = c.face || 'neutral'; if (c.face2 && t > at(b, c.face2[0])) face = c.face2[1]; if (c.face3 && t > at(b, c.face3[0])) face = c.face3[1];
+      g.face(face, g.blinkAt(t + idx), c.voice ? talkOf(c.voice, t) : 0);
+      const hy = p === 'sit' || p === 'sitphone' || p === 'type' ? 1.3 : 1.62; heads.push(V(g.root.position.x, g.root.position.y + hy * s, g.root.position.z));
+    });
+    (b.props || []).forEach((pp, k) => { const key = 'P' + b.i + '_' + k; if (!props[key]) props[key] = buildProp(pp.p); const pr = props[key]; if (pr.parent !== sc) sc.add(pr); pr.visible = true; pr.position.set(...pp.at); pr.rotation.set(0, pp.ry || 0, 0); pr.scale.setScalar(pp.s || 1); });
+    // camera
+    const cm = b.cam || {}; const k = ease(lt / Math.max(0.5, Math.min(d, 6))); const push = cm.push ?? 0.15;
+    if (cm.pos) { const p0 = V(...cm.pos), lk = V(...cm.look); const dir = p0.clone().sub(lk); p0.copy(lk).add(dir.multiplyScalar(1 - push * k)); L.setCam(p0, lk, cm.fov || 40); }
+    else { let tg; if (cm.on === 'all' || cm.on == null && heads.length > 1) { tg = heads.reduce((a, h) => a.add(h), V(0, 0, 0)).multiplyScalar(1 / heads.length); } else tg = heads[cm.on || 0].clone();
+      const dist = { close: 1.9, med: 2.8, wide: 4.6, xwide: 7.5 }[cm.shot || (heads.length > 1 ? 'wide' : 'med')] * (1 - push * k) * (cm.zoom || 1); const side = cm.side || 0;
+      const p0 = V(tg.x + side * dist * 0.5, tg.y + 0.08 + dist * 0.05, tg.z + dist); const lk = V(tg.x, tg.y - (cm.shot === 'close' ? 0.05 : 0.15 + dist * 0.06), tg.z);
+      if (cm.shake && t > at(b, cm.shake)) { const q = t - at(b, cm.shake); p0.x += Math.sin(q * 60) * 0.03 * Math.max(0, 1 - q / 0.8); }
+      L.setCam(p0, lk, cm.fov || 40); }
+    return sc;
+  }
+  const CFG = { q1: ST.q1, qHi: ST.qHi, c1: ST.q1, c2: ST.qHi,
+    days: B.filter(b => b.day).map(b => ({ t: b.lines[0].t, label: b.day, time: b.time })),
+    texts: B.flatMap(b => (b.texts || []).map(x => ({ ...x, t: at(b, x.at || 'L0+0.3'), end: Math.min(b.t1 - 0.05, x.end ? at(b, x.end) : 999) }))),
+    cta: { t: LINES.find(l => l.cta)?.t ?? 999, l1: ST.cta[0], l2: ST.cta[1] } };
+  const ov = voxOverlay(CFG, TL); L.makeFrame(shots, render, ov);
+}
