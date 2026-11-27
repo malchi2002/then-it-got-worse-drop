@@ -1,0 +1,134 @@
+{
+ "id": "31-screen",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.4,
+ "events": [
+  [
+   "N",
+   "What if your mom could see your screen time, live?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Day one. You open your phone for two minutes."
+  ],
+  [
+   "N",
+   "Mom texts.",
+   {
+    "gap": 0.25
+   }
+  ],
+  [
+   "N",
+   "Day four. You hide under the blanket to scroll in secret."
+  ],
+  [
+   "N",
+   "She still knows."
+  ],
+  [
+   "N",
+   "Day nine. You only use the calculator app. For research."
+  ],
+  [
+   "N",
+   "She's onto you."
+  ],
+  [
+   "N",
+   "Day fifteen. You leave your phone at home and go outside."
+  ],
+  [
+   "N",
+   "Mom panics."
+  ],
+  [
+   "N",
+   "Day thirty. Your screen time hits zero."
+  ],
+  [
+   "N",
+   "So you finally check hers.",
+   {
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Eleven hours. Watching cat videos.",
+   {
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to someone whose mom would do this.",
+   {
+    "gap": 0.5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.5943750000000003",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "6.190958333333334",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "10.532083333333334",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "15.347625",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "19.446333333333335",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "5.7984583333333335",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "9.859916666666667",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "14.718874999999999",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "18.895500000000002",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "22.9925",
+   "gain": 1.5
+  }
+ ]
+}
