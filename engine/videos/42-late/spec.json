@@ -1,0 +1,117 @@
+{
+ "id": "42-late",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your bro paid you a dollar every time he was late?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. Fifteen minutes late. One dollar.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day ten. You're up forty seven dollars.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day twenty. You quit your job. He's your job now.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day twenty nine. You start telling him the wrong time on purpose.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. He shows up early.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "First time ever. Now you owe him a dollar.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Tag your bro who is always late.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.6332083333333336",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "3.3332083333333338",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "5.0775",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "7.425583333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "8.625583333333333",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "10.436291666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "11.836291666666666",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "13.767875",
+   "gain": 0.6
+  }
+ ]
+}
