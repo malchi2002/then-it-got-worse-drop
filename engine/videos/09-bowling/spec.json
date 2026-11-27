@@ -275,5 +275,13 @@
    1.2,
    "en-us"
   ]
- }
+ },
+ "hook": {
+  "say": "This bowling ball just left the solar system.",
+  "rows": [
+   "LEFT THE",
+   "SOLAR SYSTEM"
+  ]
+ },
+ "coldOff": 0.3
 }
