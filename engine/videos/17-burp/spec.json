@@ -245,5 +245,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "His burp was so loud the whole planet heard it.",
+  "rows": [
+   "WHOLE PLANET",
+   "HEARD IT"
+  ]
+ },
+ "coldOff": 1.2
 }
