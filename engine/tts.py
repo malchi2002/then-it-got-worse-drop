@@ -5,8 +5,20 @@ MODEL=os.environ.get('KOKORO_MODEL','/home/claude/dl/kokoro-q8.onnx'); VOICES=os
 K=Kokoro(MODEL,VOICES); SR=24000
 VO={'N':('am_michael',1.08,'en-us'),'I':('bm_george',1.0,'en-gb'),'X':('am_puck',1.1,'en-us'),'F':('af_bella',1.05,'en-us')}
 VO.update({k:tuple(v) for k,v in spec.get('voices',{}).items()})
+import subprocess, hashlib, urllib.request
+def el(text,vid,opt):
+    key=open('/home/claude/.el_key').read().strip(); body=json.dumps({'text':text,'model_id':opt.get('model','eleven_multilingual_v2'),'voice_settings':{'stability':opt.get('stability',0.3),'similarity_boost':0.8,'style':opt.get('style',0.7),'use_speaker_boost':True,'speed':opt.get('speed',1.1)}}).encode()
+    h=hashlib.md5(body+vid.encode()).hexdigest(); cp=f'/home/claude/el/cache_{h}.mp3'
+    if not os.path.exists(cp):
+        rq=urllib.request.Request(f'https://api.elevenlabs.io/v1/text-to-speech/{vid}?output_format=mp3_44100_128',data=body,headers={'xi-api-key':key,'Content-Type':'application/json'})
+        open(cp,'wb').write(urllib.request.urlopen(rq,timeout=90).read())
+    raw=subprocess.run(['ffmpeg','-v','error','-i',cp,'-f','f32le','-ac','1','-ar',str(SR),'-'],capture_output=True).stdout
+    return np.frombuffer(raw,np.float32).copy()
 def tts(text,who):
-    v,sp,lang=VO[who]; s,sr=K.create(text,voice=v,speed=sp,lang=lang); s=np.asarray(s,np.float32)
+    vv=VO[who]
+    if vv[0]=='el': s=el(text,vv[1],vv[2] if len(vv)>2 else {})
+    else:
+        v,sp,lang=vv; s,sr=K.create(text,voice=v,speed=sp,lang=lang); s=np.asarray(s,np.float32)
     a=np.abs(s); idx=np.where(a>0.02*a.max())[0]; return s[max(0,idx[0]-240):idx[-1]+480]
 out=[]; tl=[]; t=0.0; say=[]
 COLD=spec.get('cold',0)

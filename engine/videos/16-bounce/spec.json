@@ -248,5 +248,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "He bounced all the way to Jupiter.",
+  "rows": [
+   "BOUNCED TO",
+   "JUPITER"
+  ]
+ },
+ "coldOff": 0.3
 }
