@@ -1,0 +1,116 @@
+{
+ "id": "40-bromom",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ],
+  "F": [
+   "el",
+   "cgSgspJ2msm6clMCkdW9",
+   {
+    "speed": 1.05
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your bro's mom adopted you?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. You come over for dinner.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "F",
+   "Eat more, baby. You're so skinny.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day five. You get the big plate. He gets the cold fries.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day twelve. You get his room. He sleeps on the couch.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day twenty. Family photo. He's holding the camera.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. He goes to your house instead.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "Your mom adopts him.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to your bro whose mom likes you more.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "1.7015416666666665",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "5.937916666666665",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "9.469666666666665",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "12.468374999999998",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "15.691208333333332",
+   "gain": 0.6
+  }
+ ]
+}
