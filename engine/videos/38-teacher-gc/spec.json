@@ -1,0 +1,129 @@
+{
+ "id": "38-teacher-gc",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your teacher could see your group chat?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. Someone sends: is class cancelled?",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "The teacher replies. No.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day six. You call his test impossible.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day fourteen. He starts reacting to memes.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "With a thumbs up.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. Pop quiz.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "Question one: what did you say about me on Tuesday?",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to your group chat. If you dare.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.111125",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "3.311125",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "4.66325",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "5.66325",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "6.068083333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "6.868083333333333",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "7.868083333333333",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "8.381583333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "11.664625",
+   "gain": 0.6
+  }
+ ]
+}
