@@ -243,5 +243,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "This elevator just passed Venus.",
+  "rows": [
+   "ELEVATOR",
+   "TO VENUS"
+  ]
+ },
+ "coldOff": 1.2
 }
