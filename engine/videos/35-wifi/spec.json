@@ -1,0 +1,127 @@
+{
+ "id": "35-wifi",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your Wi-Fi got slower every time you complained?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. Your video buffers once. You sigh.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day four. You say it out loud. Ugh, the Wi-Fi.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day nine. You tweet about it. Big mistake.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day fifteen. A single text takes three business days.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. You finally say: the Wi-Fi is perfect.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "Everything loads instantly. Including your mom's Facebook.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to someone who always blames the Wi-Fi.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.884125",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "3.5841250000000002",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "6.020666666666666",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "7.720666666666666",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "9.428958333333334",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "11.428958333333334",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "12.075",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "13.274999999999999",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "15.447999999999999",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "17.147999999999996",
+   "gain": 1.5
+  }
+ ]
+}
