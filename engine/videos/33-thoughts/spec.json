@@ -1,0 +1,113 @@
+{
+ "id": "33-thoughts",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ],
+  "X": [
+   "el",
+   "N2lVS1w4EtoT3dr4eOWO",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.4,
+ "events": [
+  [
+   "N",
+   "What if your bro had to say every thought out loud?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Day one. You get a fresh haircut."
+  ],
+  [
+   "X",
+   "Bro. Is that a bald spot?"
+  ],
+  [
+   "N",
+   "Day three. Your mom made dinner."
+  ],
+  [
+   "X",
+   "This tastes like a candle."
+  ],
+  [
+   "N",
+   "Day seven. He meets your crush."
+  ],
+  [
+   "X",
+   "She's way out of your league."
+  ],
+  [
+   "N",
+   "Day twelve. Job interview."
+  ],
+  [
+   "X",
+   "I only want this job for the free snacks."
+  ],
+  [
+   "N",
+   "Day thirty. You ask what he really thinks of you."
+  ],
+  [
+   "X",
+   "Honestly? You're my best friend.",
+   {
+    "gap": 0.3
+   }
+  ],
+  [
+   "X",
+   "Also you smell like hot chips.",
+   {
+    "gap": 0.5
+   }
+  ],
+  [
+   "N",
+   "Send this to your bro with no filter.",
+   {
+    "gap": 0.6
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.4299166666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "6.5259166666666655",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "10.368166666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "13.856333333333334",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "18.2275",
+   "gain": 0.6
+  }
+ ]
+}
