@@ -340,7 +340,13 @@ export function makeOverlay(CFG) {
     for (const b of (CFG.flashSmall || [])) { const d = t - b; if (d >= 0 && d < 0.1) { ctx.fillStyle = `rgba(255,255,255,${0.45 * (1 - d / 0.1)})`; ctx.fillRect(0, 0, W, H); } }
     const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
   };
-  ov.cold = (t) => { const c0 = TL.cold; const k = t / c0; ctx.fillStyle = `rgba(255,255,255,${0.5 * clamp(1 - t / 0.12)})`; ctx.fillRect(0, 0, W, H); bigTitle(330, 1); const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H); };
+  function hookText(t) {
+    const Hk = TL.hook; const rows = Hk.rows; const span = Hk.end - Hk.t; ctx.fillStyle = 'rgba(0,0,0,0.15)'; ctx.fillRect(0, 0, W, H);
+    const fs = fitFont(rows, W - 70, 200); ctx.lineJoin = 'round'; ctx.textAlign = 'center';
+    rows.forEach((r, i) => { const ap = i === 0 ? 0 : Hk.t + span * 0.45; const lt = t - ap; if (lt < 0) return; const pop = 1 + 0.18 * Math.max(0, 1 - lt / 0.12);
+      ctx.save(); ctx.translate(W / 2, 640 - (rows.length - 1) * fs * 0.55 + i * fs * 1.1); ctx.scale(pop, pop); strokeText(r, 0, 0, `${fs}px 'Archivo Black'`, i === rows.length - 1 ? '#ffcf4a' : '#ffffff', '#000', fs * 0.17); ctx.restore(); });
+  }
+  ov.cold = (t) => { if (TL.hook) { const d = t; ctx.fillStyle = `rgba(255,255,255,${0.6 * clamp(1 - d / 0.1)})`; ctx.fillRect(0, 0, W, H); hookText(t); const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H); return; } const c0 = TL.cold; const k = t / c0; ctx.fillStyle = `rgba(255,255,255,${0.5 * clamp(1 - t / 0.12)})`; ctx.fillRect(0, 0, W, H); bigTitle(330, 1); const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.35)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H); };
   window.__coldOv = ov.cold; return ov;
 }
 // timeline helpers

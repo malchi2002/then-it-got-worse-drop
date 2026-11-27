@@ -235,5 +235,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "His snowball just became a second moon.",
+  "rows": [
+   "SNOWBALL",
+   "IS A 2ND MOON"
+  ]
+ },
+ "coldOff": 0.3
 }

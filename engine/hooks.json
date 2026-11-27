@@ -1,0 +1,143 @@
+{
+"04-bright": [
+"His phone is now brighter than the Sun.",
+"BRIGHTER THAN",
+"THE SUN",
+-2.5
+],
+"05-snowball": [
+"His snowball just became a second moon.",
+"SNOWBALL",
+"IS A 2ND MOON",
+0.3
+],
+"06-soda": [
+"Whatever you do, never open this soda.",
+"NEVER OPEN",
+"THIS SODA",
+0.3
+],
+"07-spicy": [
+"One bite, and now he breathes fire.",
+"ONE BITE.",
+"FIRE BREATH.",
+-5
+],
+"08-bubble": [
+"His bubblegum bubble swallowed the Earth.",
+"BUBBLE ATE",
+"THE EARTH",
+2.5
+],
+"09-bowling": [
+"This bowling ball just left the solar system.",
+"LEFT THE",
+"SOLAR SYSTEM",
+0.3
+],
+"10-flush": [
+"He just flushed Loch Ness.",
+"HE FLUSHED",
+"LOCH NESS",
+2.5
+],
+"11-beanstalk": [
+"He watered a bean all the way to the Moon.",
+"A BEAN TO",
+"THE MOON",
+0.3
+],
+"12-elevator": [
+"This elevator just passed Venus.",
+"ELEVATOR",
+"TO VENUS",
+1.2
+],
+"13-heavy": [
+"He sat down so hard he made a crater.",
+"HE SAT DOWN",
+"TOO HARD",
+-5
+],
+"14-skip": [
+"He skipped a rock around the whole Earth.",
+"AROUND THE",
+"WHOLE EARTH",
+0.3
+],
+"15-coffee": [
+"His coffee is hotter than the Sun.",
+"HOTTER THAN",
+"THE SUN",
+1.2
+],
+"16-bounce": [
+"He bounced all the way to Jupiter.",
+"BOUNCED TO",
+"JUPITER",
+0.3
+],
+"17-burp": [
+"His burp was so loud the whole planet heard it.",
+"WHOLE PLANET",
+"HEARD IT",
+1.2
+],
+"18-hair": [
+"His hair wrapped around the Earth three times.",
+"AROUND EARTH",
+"3 TIMES",
+2.5
+],
+"19-kite": [
+"He flew his kite into the Sun.",
+"KITE INTO",
+"THE SUN",
+2.5
+],
+"20-pizza": [
+"He ordered a pizza bigger than the Earth.",
+"BIGGER THAN",
+"THE EARTH"
+],
+"21-homerun": [
+"He hit a home run into space.",
+"HOME RUN",
+"INTO SPACE"
+],
+"22-cart": [
+"This shopping cart just hit light speed.",
+"CART HIT",
+"LIGHT SPEED"
+],
+"23-fish": [
+"He caught a fish heavier than a ship.",
+"HEAVIER THAN",
+"A SHIP"
+],
+"24-spin": [
+"He spun straight through the Earth.",
+"SPUN THROUGH",
+"THE EARTH"
+],
+"25-snooze": [
+"He hit snooze and woke up 736 years later.",
+"736 YEARS",
+"LATER"
+],
+"26-slide": [
+"This water slide goes to the Moon.",
+"WATER SLIDE",
+"TO THE MOON"
+],
+"27-plane": [
+"His homework flew around the whole world.",
+"AROUND THE",
+"WHOLE WORLD"
+],
+"28-candles": [
+"His birthday cake is visible from space.",
+"SEEN FROM",
+"SPACE"
+]
+}

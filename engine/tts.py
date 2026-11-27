@@ -12,7 +12,12 @@ out=[]; tl=[]; t=0.0; say=[]
 COLD=spec.get('cold',0)
 def add(seg,gap):
     global t; out.append(np.zeros(int(gap*SR),np.float32)); t+=gap; st=t; out.append(seg); t+=len(seg)/SR; return st
-if COLD: out.append(np.zeros(int(COLD*SR),np.float32)); t+=COLD
+HOOK=spec.get('hook'); HK=None
+if HOOK:
+    hs=tts(HOOK['say'],'N'); out.append(np.zeros(int(0.06*SR),np.float32)); out.append(hs); hd=len(hs)/SR
+    COLD=round(0.06+hd+0.3,3); out.append(np.zeros(int(0.3*SR),np.float32)); t=COLD
+    HK={'say':HOOK['say'],'rows':HOOK['rows'],'t':0.06,'end':0.06+hd}
+elif COLD: out.append(np.zeros(int(COLD*SR),np.float32)); t+=COLD
 for e in spec['events']:
     if e[0]=='A':
         n=e[1]; meta=e[2] if len(e)>2 else {}; dur=meta.get('dur',0.6); off=meta.get('off',0.3)
@@ -34,6 +39,6 @@ for x in tl:
         c=tts(x['say'],x.get('sayWho','X')); sf.write(f"{d}/act_{x['n']}.wav",c,SR)
 acts=[x for x in tl if x['type']=='act']
 coldAt=(acts[-1]['blast']+spec.get('coldOff',1.0)) if acts else 0
-json.dump({'dur':t,'tl':tl,'cold':COLD,'coldAt':coldAt},open(f'{d}/timeline.json','w'),indent=1)
+json.dump({'dur':t,'tl':tl,'cold':COLD,'coldAt':coldAt,'hook':HK},open(f'{d}/timeline.json','w'),indent=1)
 print('total',round(t,2))
 for x in tl: print(round(x['t'],2),x['type'],x.get('text',x.get('n')))

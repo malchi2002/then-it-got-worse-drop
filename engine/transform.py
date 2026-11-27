@@ -1,3 +1,4 @@
+import os
 import json, sys, re, os, shutil
 vid=sys.argv[1]; d=f'videos/{vid}'
 if not os.path.exists(f'{d}/spec_v1.json'): shutil.copy(f'{d}/spec.json', f'{d}/spec_v1.json')
@@ -28,5 +29,9 @@ for e in s.get('sfx',[]):
         else: continue
     sf.append(e)
 s['sfx']=sf
+H=json.load(open('/home/claude/engine/hooks.json')).get(os.path.basename(d.rstrip('/')))
+if H:
+    s['hook']={'say':H[0],'rows':H[1:3]}
+    if len(H)>3: s['coldOff']=H[3]
 json.dump(s,open(f'{d}/spec.json','w'),indent=1,ensure_ascii=False)
 print(vid,'pairs',k,'dropped',[ev[p][1] for p in drop])
