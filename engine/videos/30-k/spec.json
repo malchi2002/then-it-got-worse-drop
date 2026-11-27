@@ -1,0 +1,190 @@
+{
+ "id": "30-k",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.4,
+ "events": [
+  [
+   "N",
+   "What if your bro only ever replied k?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Day one. You send him the funniest meme on the internet."
+  ],
+  [
+   "N",
+   "He replies. K.",
+   {
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Day three. You tell him you got the job."
+  ],
+  [
+   "N",
+   "K."
+  ],
+  [
+   "N",
+   "Day seven. You tell him you're moving to Japan."
+  ],
+  [
+   "N",
+   "K.",
+   {
+    "gap": 0.25
+   }
+  ],
+  [
+   "N",
+   "Day twelve. You write him a two thousand word paragraph."
+  ],
+  [
+   "N",
+   "He reads it in four seconds."
+  ],
+  [
+   "N",
+   "K."
+  ],
+  [
+   "N",
+   "Day twenty. You stop texting him. Total silence."
+  ],
+  [
+   "N",
+   "Day twenty nine. Midnight. Your phone buzzes."
+  ],
+  [
+   "N",
+   "It's him. U good?",
+   {
+    "gap": 0.35
+   }
+  ],
+  [
+   "N",
+   "So you finally reply."
+  ],
+  [
+   "N",
+   "K.",
+   {
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to your bro who only replies k.",
+   {
+    "gap": 0.5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "1.9903750000000004",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "6.323041666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "8.855625000000002",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "12.362458333333336",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "17.28104166666667",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "20.635750000000005",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "3.3903750000000006",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "6.005375",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "7.523041666666667",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "8.477916666666667",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "10.355625000000002",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "11.984750000000002",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "13.862458333333336",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "16.903333333333336",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "23.74120833333334",
+   "gain": 1.5
+  },
+  {
+   "type": "pop",
+   "at": "26.45408333333334",
+   "gain": 1.5
+  },
+  {
+   "type": "ding",
+   "at": "23.14120833333334",
+   "gain": 0.6
+  },
+  {
+   "type": "boom",
+   "at": "27.45408333333334",
+   "dur": 1.2,
+   "gain": 0.8
+  }
+ ]
+}
