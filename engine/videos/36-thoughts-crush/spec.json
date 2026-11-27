@@ -1,0 +1,152 @@
+{
+ "id": "36-thoughts-crush",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ],
+  "Y": [
+   "el",
+   "N2lVS1w4EtoT3dr4eOWO",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your crush could hear your thoughts?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. She sits next to you in class.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "Y",
+   "Don't look. Don't look. Don't look.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day three. She says hi.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "Y",
+   "Say something cool. Say something cool.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "You say: thanks, you too.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day eight. Your bro walks by.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "Y",
+   "Please don't embarrass me.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day twenty. You finally think it.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "Y",
+   "I really like you.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Silence.",
+   {
+    "beat": 4,
+    "gap": 0.4
+   }
+  ],
+  [
+   "N",
+   "Then she thinks back.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "I know. You think very loud.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Tag someone who overthinks everything.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.060791666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "6.651624999999998",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "12.428541666666666",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "15.6385",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "19.724291666666666",
+   "gain": 0.6
+  }
+ ]
+}
