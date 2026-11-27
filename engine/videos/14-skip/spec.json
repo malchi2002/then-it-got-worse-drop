@@ -258,5 +258,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "He skipped a rock around the whole Earth.",
+  "rows": [
+   "AROUND THE",
+   "WHOLE EARTH"
+  ]
+ },
+ "coldOff": 0.3
 }
