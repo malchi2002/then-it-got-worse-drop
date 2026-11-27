@@ -226,5 +226,13 @@
    1.2,
    "en-us"
   ]
- }
+ },
+ "hook": {
+  "say": "He just flushed Loch Ness.",
+  "rows": [
+   "HE FLUSHED",
+   "LOCH NESS"
+  ]
+ },
+ "coldOff": 2.5
 }
