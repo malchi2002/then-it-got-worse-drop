@@ -1,0 +1,144 @@
+{
+ "id": "32-lie",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ],
+  "F": [
+   "el",
+   "cgSgspJ2msm6clMCkdW9",
+   {
+    "speed": 1.05
+   }
+  ]
+ },
+ "tail": 0.4,
+ "events": [
+  [
+   "N",
+   "What if every lie made your hoodie one size bigger?",
+   {
+    "title": 1
+   }
+  ],
+  [
+   "N",
+   "Day one. Mom asks if you did your homework."
+  ],
+  [
+   "N",
+   "You say yes.",
+   {
+    "gap": 0.2
+   }
+  ],
+  [
+   "N",
+   "Day five. You tell your crush you're six foot."
+  ],
+  [
+   "N",
+   "Day ten. You tell your bro you're five minutes away."
+  ],
+  [
+   "N",
+   "You haven't left your bed."
+  ],
+  [
+   "N",
+   "Day twenty. Your hoodie is a tent."
+  ],
+  [
+   "N",
+   "Day thirty. You can't fit through the door."
+  ],
+  [
+   "F",
+   "Did you eat the last slice of pizza?",
+   {
+    "gap": 0.35
+   }
+  ],
+  [
+   "N",
+   "You say no.",
+   {
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Tag the biggest liar you know.",
+   {
+    "gap": 0.8
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.65075",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "6.194208333333332",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "8.858333333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "13.704625",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "15.869958333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "6.0649999999999995",
+   "gain": 1.6
+  },
+  {
+   "type": "pop",
+   "at": "8.978333333333332",
+   "gain": 1.6
+  },
+  {
+   "type": "pop",
+   "at": "13.774625",
+   "gain": 1.6
+  },
+  {
+   "type": "pop",
+   "at": "13.904625",
+   "gain": 1.6
+  },
+  {
+   "type": "pop",
+   "at": "16.069958333333332",
+   "gain": 1.6
+  },
+  {
+   "type": "pop",
+   "at": "10.658333333333331",
+   "gain": 1.2
+  },
+  {
+   "type": "boom",
+   "at": "21.115000000000002",
+   "dur": 1.6,
+   "gain": 1.0
+  }
+ ]
+}
