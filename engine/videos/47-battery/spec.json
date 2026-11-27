@@ -1,0 +1,122 @@
+{
+ "id": "47-battery",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your phone battery was tied to your grades?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. You get a C on a quiz. Phone drops to seventy percent.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day four. You forget your homework. Eight percent.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day seven. You're studying at two in the morning. Voluntarily.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day twenty. Straight A's. One hundred percent. Forever.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Then summer break starts.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "No grades. Zero percent.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to the friend who is always on one percent.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "2.633125",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "5.333125000000001",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "6.228333333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "8.228333333333333",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "9.270958333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "12.670791666666666",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "14.470791666666665",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "16.748583333333332",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "18.699916666666667",
+   "gain": 1.5
+  }
+ ]
+}
