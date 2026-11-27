@@ -1,0 +1,123 @@
+{
+ "id": "46-never-leaves",
+ "voices": {
+  "N": [
+   "el",
+   "9F4C8ztpNUmXkdDDbz3J",
+   {
+    "speed": 1.1
+   }
+  ],
+  "F": [
+   "el",
+   "cgSgspJ2msm6clMCkdW9",
+   {
+    "speed": 1.05
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your bro never left your house?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. Sleepover. Normal.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day five. He knows where the snacks are. Better than you.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day twelve. Your mom calls him son.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "F",
+   "Dinner's ready, son.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "She's not talking to you.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day twenty. He has a key. And a drawer. And your bed.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. You go to his house to get some peace.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "His mom doesn't let you leave either.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to the bro who never goes home.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "1.8285416666666665",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "3.848041666666666",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "6.970624999999999",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "11.765125000000001",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "15.582708333333334",
+   "gain": 0.6
+  }
+ ]
+}
