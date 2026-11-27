@@ -246,5 +246,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "He sat down so hard he made a crater.",
+  "rows": [
+   "HE SAT DOWN",
+   "TOO HARD"
+  ]
+ },
+ "coldOff": -5
 }
