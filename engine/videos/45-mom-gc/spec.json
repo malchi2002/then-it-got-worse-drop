@@ -1,0 +1,127 @@
+{
+ "id": "45-mom-gc",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your mom joined the group chat?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. Mom has been added to the chat.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day two. Good morning, boys. With fourteen emojis.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day six. Someone says: who's up. Mom replies: me. Go to bed.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day fifteen. She posts your baby pictures. All of them.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. The boys make a new chat without her.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "She's already in it.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to the group chat before mom sees it.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "1.8051666666666668",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "2.605166666666667",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "4.539458333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "5.239458333333333",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "8.033000000000001",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "10.633000000000001",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "13.037541666666668",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "14.437541666666666",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "16.224083333333333",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "19.40525",
+   "gain": 1.5
+  }
+ ]
+}
