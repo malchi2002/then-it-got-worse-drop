@@ -1,0 +1,112 @@
+{
+ "id": "41-famous",
+ "voices": {
+  "N": [
+   "el",
+   "TX3LPaxmHKxFdv7VOQHJ",
+   {
+    "speed": 1.1
+   }
+  ]
+ },
+ "tail": 0.5,
+ "events": [
+  [
+   "N",
+   "What if your bro went viral overnight?",
+   {
+    "title": 1,
+    "beat": 0
+   }
+  ],
+  [
+   "N",
+   "Day one. He posts a video of himself tripping. Ten million views.",
+   {
+    "beat": 1
+   }
+  ],
+  [
+   "N",
+   "Day three. He starts wearing sunglasses. Inside.",
+   {
+    "beat": 2
+   }
+  ],
+  [
+   "N",
+   "Day seven. You ask to hang out. He sends his manager.",
+   {
+    "beat": 3
+   }
+  ],
+  [
+   "N",
+   "Day fourteen. He calls you his biggest fan.",
+   {
+    "beat": 4
+   }
+  ],
+  [
+   "N",
+   "Day thirty. Views drop to zero.",
+   {
+    "beat": 5
+   }
+  ],
+  [
+   "N",
+   "He's back on your couch like nothing happened.",
+   {
+    "beat": 5,
+    "gap": 0.3
+   }
+  ],
+  [
+   "N",
+   "Send this to the bro who would forget you.",
+   {
+    "cta": 1,
+    "gap": 0.5,
+    "beat": 5
+   }
+  ]
+ ],
+ "sfx": [
+  {
+   "type": "whoosh",
+   "at": "1.959666666666667",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "4.159666666666666",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "7.0197916666666655",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "11.138458333333332",
+   "gain": 0.6
+  },
+  {
+   "type": "pop",
+   "at": "12.838458333333332",
+   "gain": 1.5
+  },
+  {
+   "type": "whoosh",
+   "at": "14.495958333333332",
+   "gain": 0.6
+  },
+  {
+   "type": "whoosh",
+   "at": "17.205541666666665",
+   "gain": 0.6
+  }
+ ]
+}
