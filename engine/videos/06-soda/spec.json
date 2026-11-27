@@ -247,5 +247,13 @@
   }
  ],
  "cold": 0.9,
- "tail": 0.12
+ "tail": 0.12,
+ "hook": {
+  "say": "Whatever you do, never open this soda.",
+  "rows": [
+   "NEVER OPEN",
+   "THIS SODA"
+  ]
+ },
+ "coldOff": 0.3
 }

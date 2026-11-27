@@ -98,46 +98,55 @@
 "20-pizza": [
 "He ordered a pizza bigger than the Earth.",
 "BIGGER THAN",
-"THE EARTH"
+"THE EARTH",
+1.2
 ],
 "21-homerun": [
 "He hit a home run into space.",
 "HOME RUN",
-"INTO SPACE"
+"INTO SPACE",
+1.2
 ],
 "22-cart": [
 "This shopping cart just hit light speed.",
 "CART HIT",
-"LIGHT SPEED"
+"LIGHT SPEED",
+0.3
 ],
 "23-fish": [
 "He caught a fish heavier than a ship.",
 "HEAVIER THAN",
-"A SHIP"
+"A SHIP",
+0.3
 ],
 "24-spin": [
 "He spun straight through the Earth.",
 "SPUN THROUGH",
-"THE EARTH"
+"THE EARTH",
+1.2
 ],
 "25-snooze": [
 "He hit snooze and woke up 736 years later.",
 "736 YEARS",
-"LATER"
+"LATER",
+-5
 ],
 "26-slide": [
 "This water slide goes to the Moon.",
 "WATER SLIDE",
-"TO THE MOON"
+"TO THE MOON",
+0.3
 ],
 "27-plane": [
 "His homework flew around the whole world.",
 "AROUND THE",
-"WHOLE WORLD"
+"WHOLE WORLD",
+0.3
 ],
 "28-candles": [
 "His birthday cake is visible from space.",
 "SEEN FROM",
-"SPACE"
+"SPACE",
+1.0
 ]
 }
